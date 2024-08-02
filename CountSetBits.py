@@ -1,6 +1,6 @@
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        # Convert n to binary and count 1s
+        # Convert n to binary and count '1' bits
         count = 0
         binary = bin(n)
         for num in binary:

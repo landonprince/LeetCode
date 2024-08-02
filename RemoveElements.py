@@ -3,7 +3,7 @@ class Solution:
         # Iterate through the list
         i = 0
         while i < len(nums):
-            # If the current number is not equal to the value, move the slow pointer forward
+            # If the current number is not equal to the value, move the pointer forward
             if nums[i] != val:
                 i += 1
             # If the current number is equal to the value, remove it from the list by swapping it with the last element and reducing the list length by 1
