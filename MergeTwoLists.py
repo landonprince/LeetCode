@@ -41,8 +41,8 @@ list2.next = ListNode(3)
 list2.next.next = ListNode(4)
 
 solution = Solution()
-merged_list = solution.mergeTwoLists(list1, list2)
-current = merged_list
+result = solution.mergeTwoLists(list1, list2)
+current = result
 
 print()
 while current is not None:
