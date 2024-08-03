@@ -16,7 +16,7 @@ class SearchInBST:
             "Find the node in the BST that the node's value equals val and return the subtree rooted with that node.\n"
             "If such a node does not exist, return null."
         )
-        self.tags = ["Binary Tree", "Binary Search Tree, Recursion"]
+        self.tags = ["Binary Tree", "Recursion"]
 
     def solution(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         # Recursive search for the value in the binary search tree (BST)

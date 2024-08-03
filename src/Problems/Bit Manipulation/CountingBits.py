@@ -1,15 +1,17 @@
 from typing import List
+from src.Problems.AbstractProblem import AbstractProblem
 
-class CountingBits:
+class CountingBits(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/counting-bits/description/"
-        self.instructions = (
-            "Given an integer n, return an array ans of length n + 1 such that "
-            "for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i."
+        super().__init__(
+            difficulty="easy",
+            link="https://leetcode.com/problems/counting-bits/description/",
+            instructions=(
+                "Given an integer n, return an array ans of length n + 1 such that "
+                "for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i."
+            ),
+            tags=["Array", "Bit Manipulation"]
         )
-        self.tags = ["Array, Bit Manipulation"]
-
 
     def solution(self, n: int) -> List[int]:
         # Create a result array of size n+1 initialized to 0
@@ -33,9 +35,4 @@ class CountingBits:
             print(f"Test passed for n = {n}: {result}")
 
     def __str__(self):
-        return f"Problem: Counting Bits\nDifficulty: {self.difficulty}\nLink: {self.link}\nInstructions: {self.instructions}"
-
-# Create an instance of the problem
-solution = CountingBits()
-print(solution) # Display problem information
-solution.test()  # Run tests
+        return f"Problem: Counting Bits\n{super().__str__()}"
