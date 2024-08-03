@@ -1,6 +1,16 @@
-class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
-        # Create an empty dictionary to store the numbers and their indices
+class TwoSum:
+    def __init__(self):
+        self.difficulty = "easy"
+        self.link = "https://leetcode.com/problems/two-sum/description/"
+        self.instructions = (
+            "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n"
+            "You may assume that each input would have exactly one solution, and you may not use the same element twice.\n"
+            "You can return the answer in any order."
+        )
+        self.tags = ["Array", "Map"]
+
+    def solution(self, nums: list[int], target: int) -> list[int]:
+        # Create a dictionary to store the numbers and their indices
         num_dict = {}
 
         # Iterate over the list of numbers with their indices
@@ -11,14 +21,35 @@ class Solution:
             # If the complement is found, return the indices of the complement and the current number
             if complement in num_dict:
                 return [num_dict[complement], i]
-            
+
             # If the complement is not found, add the current number and its index to the dictionary
             num_dict[num] = i
 
-solution = Solution()
-nums1 = [2, 7, 11, 15]
-target1 = 9
-result1 = solution.twoSum(nums1, target1)
+        # If no solution is found, return an empty list (although the problem guarantees a solution)
+        return []
 
-print()
-print(f"nums = {nums1}, target = {target1}, result = {result1}")
+    def test(self):
+        # Test cases
+        test_cases = [
+            ([2, 7, 11, 15], 9, [0, 1]),
+            ([3, 2, 4], 6, [1, 2]),
+            ([3, 3], 6, [0, 1]),
+            ([1, 5, 7, 9], 14, [2, 3]),
+            ([1, 2, 3, 4, 5], 9, [3, 4])
+        ]
+
+        for nums, target, expected in test_cases:
+            result = self.solution(nums, target)
+            assert result == expected, f"Test failed: expected {expected}, got {result}"
+            print(f"Test passed for nums = {nums}, target = {target}: {result}")
+
+    def __str__(self):
+        return (
+            f"Problem: Two Sum\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
+            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
+        )
+
+# Create an instance of the problem
+solution = TwoSum()
+print(solution)  # Display problem information
+solution.test()  # Run tests

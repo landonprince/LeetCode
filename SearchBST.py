@@ -7,27 +7,75 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
-    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+class SearchInBST:
+    def __init__(self):
+        self.difficulty = "easy"
+        self.link = "https://leetcode.com/problems/search-in-a-binary-search-tree/description/"
+        self.instructions = (
+            "You are given the root of a binary search tree (BST) and an integer val.\n"
+            "Find the node in the BST that the node's value equals val and return the subtree rooted with that node.\n"
+            "If such a node does not exist, return null."
+        )
+        self.tags = ["Binary Tree", "Binary Search Tree"]
+
+    def solution(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         # Recursive search for the value in the binary search tree (BST)
         if not root:
             return None
         if val < root.val:
-            return self.searchBST(root.left, val)
+            return self.solution(root.left, val)
         elif val > root.val:
-            return self.searchBST(root.right, val)
+            return self.solution(root.right, val)
         else:
             return root
-        
-root = TreeNode(4)
-root.left = TreeNode(2)
-root.right = TreeNode(7)
-root.left.left = TreeNode(1)
-root.left.right = TreeNode(3)
-root.right.left = TreeNode(6)
 
-solution = Solution()
-result = solution.searchBST(root, 2)
+    def test(self):
+        # Helper function to print the tree in-order for debugging
+        def print_in_order(node: Optional[TreeNode]) -> list:
+            return (
+                print_in_order(node.left) + [node.val] + print_in_order(node.right)
+                if node else []
+            )
 
-print()
-print(f"result = {result.val if result else None}")
+        # Construct a binary search tree for testing
+        root = TreeNode(4)
+        root.left = TreeNode(2)
+        root.right = TreeNode(7)
+        root.left.left = TreeNode(1)
+        root.left.right = TreeNode(3)
+        root.right.left = TreeNode(6)
+
+        # Test case 1: Search for a value that exists
+        val1 = 2
+        expected = [1, 2, 3]
+        result = self.solution(root, val1)
+        result_values = print_in_order(result)
+        assert result_values == expected, f"Test failed: expected {expected}, got {result_values}"
+        print(f"Test passed for value {val1}: {result_values}")
+
+        # Test case 2: Search for a value that does not exist
+        val2 = 5
+        expected = None
+        result = self.solution(root, val2)
+        result_values = result.val if result else None
+        assert result_values == expected, f"Test failed: expected {expected}, got {result_values}"
+        print(f"Test passed for value {val2}: {result_values}")
+
+        # Test case 3: Search for the root value
+        val3 = 4
+        expected = [1, 2, 3, 4, 6, 7]
+        result = self.solution(root, val3)
+        result_values = print_in_order(result)
+        assert result_values == expected, f"Test failed: expected {expected}, got {result_values}"
+        print(f"Test passed for value {val3}: {result_values}")
+
+    def __str__(self):
+        return (
+            f"Problem: Search in a Binary Search Tree\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
+            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
+        )
+
+# Create an instance of the problem
+solution = SearchInBST()
+print(solution)  # Display problem information
+solution.test()  # Run tests
