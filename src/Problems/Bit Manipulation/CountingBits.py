@@ -4,13 +4,14 @@ from src.Problems.AbstractProblem import AbstractProblem
 class CountingBits(AbstractProblem):
     def __init__(self):
         super().__init__(
-            difficulty="easy",
-            link="https://leetcode.com/problems/counting-bits/description/",
-            instructions=(
+            problem = "Counting Bits",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/counting-bits/description/",
+            instructions = (
                 "Given an integer n, return an array ans of length n + 1 such that "
                 "for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i."
             ),
-            tags=["Array", "Bit Manipulation"]
+            tags = ["Array", "Bit Manipulation"]
         )
 
     def solution(self, n: int) -> List[int]:
@@ -35,4 +36,4 @@ class CountingBits(AbstractProblem):
             print(f"Test passed for n = {n}: {result}")
 
     def __str__(self):
-        return f"Problem: Counting Bits\n{super().__str__()}"
+        return super().__str__()

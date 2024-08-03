@@ -1,4 +1,5 @@
 from typing import Optional, List
+from src.Problems.AbstractProblem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -7,17 +8,20 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class LeafSimilarTrees:
+class LeafSimilarTrees(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/leaf-similar-trees/description/"
-        self.instructions = (
-            "Consider all the leaves of a binary tree, from left to right order, the values of those leaves "
-            "form a leaf value sequence.\n"
-            "Two binary trees are considered leaf-similar if their leaf value sequence is the same.\n"
-            "Return true if and only if the two given trees with root nodes root1 and root2 are leaf-similar."
+        super().__init__(
+            problem = "Leaf-Similar Trees",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/leaf-similar-trees/description/",
+            instructions = (
+                "Consider all the leaves of a binary tree, from left to right order, the values of those leaves "
+                "form a leaf value sequence.\n"
+                "Two binary trees are considered leaf-similar if their leaf value sequence is the same.\n"
+                "Return true if and only if the two given trees with root nodes root1 and root2 are leaf-similar."
+            ),
+            tags = ["Binary Tree, Recursion"]
         )
-        self.tags = ["Binary Tree, Recursion"]
 
     def solution(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
         # Helper function to traverse the binary tree and collect the leaf values in a list
@@ -91,12 +95,6 @@ class LeafSimilarTrees:
         print("All tests passed!")
 
     def __str__(self):
-        return (
-            f"Problem: Leaf-Similar Trees\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
+        return super().__str__()
 
-# Create an instance of the problem
-solution = LeafSimilarTrees()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+

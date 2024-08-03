@@ -1,4 +1,5 @@
 from typing import Optional
+from src.Problems.AbstractProblem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -7,15 +8,18 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class CheckTree:
+class CheckTree(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/root-equals-sum-of-children/description/"
-        self.instructions = (
-            "You are given the root node of a binary tree with exactly 3 nodes: the root, its left child, and its right child.\n"
-            "Return true if the value of the root is equal to the sum of the values of its two children, or false otherwise."
+        super().__init__(
+            problem = "Root Equals Sum of Children",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/root-equals-sum-of-children/description/",
+            instructions = (
+                "You are given the root node of a binary tree with exactly 3 nodes: the root, its left child, and its right child.\n"
+                "Return true if the value of the root is equal to the sum of the values of its two children, or false otherwise."
+            ),
+            tags = ["Binary Tree, Recursion"]
         )
-        self.tags = ["Binary Tree, Recursion"]
 
     def solution(self, root: Optional[TreeNode]) -> bool:
         # Check if the sum of left and right children is equal to the root's value
@@ -57,12 +61,4 @@ class CheckTree:
         print(f"Test passed for test case 4: result = {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Root Equals Sum of Children\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = CheckTree()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

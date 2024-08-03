@@ -1,17 +1,22 @@
-class FirstBadVersion:
+from src.Problems.AbstractProblem import AbstractProblem
+
+class FirstBadVersion(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/first-bad-version/description/"
-        self.instructions = (
-            "You are a product manager and currently leading a team to develop a new product. "
-            "Unfortunately, the latest version of your product fails the quality check. Since each version is developed "
-            "based on the previous version, all the versions after a bad version are also bad.\n"
-            "Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, "
-            "which causes all the following ones to be bad.\n"
-            "You are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function "
-            "to find the first bad version. You should minimize the number of calls to the API."
+        super().__init__(
+            problem = "First Bad Version",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/first-bad-version/description/",
+            instructions = (
+                "You are a product manager and currently leading a team to develop a new product. "
+                "Unfortunately, the latest version of your product fails the quality check. Since each version is developed "
+                "based on the previous version, all the versions after a bad version are also bad.\n"
+                "Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, "
+                "which causes all the following ones to be bad.\n"
+                "You are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function "
+                "to find the first bad version. You should minimize the number of calls to the API."
+            ),
+            tags = ["Binary Search"]
         )
-        self.tags = ["Binary Search"]
 
     def solution(self, n: int) -> int:
         # Initialize the left and right pointers
@@ -57,12 +62,6 @@ class FirstBadVersion:
             print(f"Test passed for bad = {bad}, n = {n}: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: First Bad Version\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
+        return super().__str__()
 
-# Create an instance of the problem
-solution = FirstBadVersion()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+

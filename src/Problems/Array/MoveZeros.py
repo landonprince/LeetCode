@@ -1,15 +1,19 @@
 from typing import List
+from src.Problems.AbstractProblem import AbstractProblem
 
-class MoveZeroes:
+class MoveZeroes(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/move-zeroes/description/"
-        self.instructions = (
-            "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the "
-            "non-zero elements.\n"
-            "Note that you must do this in-place without making a copy of the array."
+        super().__init__(
+            problem = "Move Zeroes",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/move-zeroes/description/",
+            instructions = (
+                "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the "
+                "non-zero elements.\n"
+                "Note that you must do this in-place without making a copy of the array."
+            ),
+            tags = ["Array"]
         )
-        self.tags = ["Array"]
 
     def solution(self, nums: List[int]) -> None:
         # Two-pointer approach
@@ -42,12 +46,5 @@ class MoveZeroes:
             print(f"Test passed for nums = {nums}: {nums_copy}")
 
     def __str__(self):
-        return (
-            f"Problem: Move Zeroes\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
+        return super().__str__()
 
-# Create an instance of the problem
-solution = MoveZeroes()
-print(solution)  # Display problem information
-solution.test()  # Run tests

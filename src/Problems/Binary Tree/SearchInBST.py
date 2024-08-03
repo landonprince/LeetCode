@@ -1,4 +1,5 @@
 from typing import Optional
+from src.Problems.AbstractProblem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -9,14 +10,16 @@ class TreeNode:
 
 class SearchInBST:
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/search-in-a-binary-search-tree/description/"
-        self.instructions = (
-            "You are given the root of a binary search tree (BST) and an integer val.\n"
-            "Find the node in the BST that the node's value equals val and return the subtree rooted with that node.\n"
-            "If such a node does not exist, return null."
+        super().__init__(
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/search-in-a-binary-search-tree/description/",
+            instructions = (
+                "You are given the root of a binary search tree (BST) and an integer val.\n"
+                "Find the node in the BST that the node's value equals val and return the subtree rooted with that node.\n"
+                "If such a node does not exist, return null."
+            ),
+            tags = ["Binary Tree", "Recursion"]
         )
-        self.tags = ["Binary Tree", "Recursion"]
 
     def solution(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         # Recursive search for the value in the binary search tree (BST)
@@ -70,12 +73,4 @@ class SearchInBST:
         print(f"Test passed for value {val3}: {result_values}")
 
     def __str__(self):
-        return (
-            f"Problem: Search in a Binary Search Tree\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = SearchInBST()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

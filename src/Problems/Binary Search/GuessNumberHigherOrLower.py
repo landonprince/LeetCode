@@ -1,19 +1,24 @@
-class GuessNumberHigherOrLower:
+from src.Problems.AbstractProblem import AbstractProblem
+
+class GuessNumberHigherOrLower(AbstractProblem):
     def __init__(self, picked_number: int):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/guess-number-higher-or-lower/description/"
-        self.instructions = (
-            "We are playing the Guess Game. The game is as follows:\n"
-            "I pick a number from 1 to n. You have to guess which number I picked.\n"
-            "Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.\n"
-            "You call a pre-defined API int guess(int num) which returns:\n"
-            "-1 if num is higher than the number I picked (your guess is too high)\n"
-            "1 if num is lower than the number I picked (your guess is too low)\n"
-            "0 if num is equal to the number I picked (your guess is correct)\n"
-            "Return the number I picked."
+        super().__init__(
+            problem = "Guess Number Higher or Lower",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/guess-number-higher-or-lower/description/",
+            instructions = (
+                "We are playing the Guess Game. The game is as follows:\n"
+                "I pick a number from 1 to n. You have to guess which number I picked.\n"
+                "Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.\n"
+                "You call a pre-defined API int guess(int num) which returns:\n"
+                "-1 if num is higher than the number I picked (your guess is too high)\n"
+                "1 if num is lower than the number I picked (your guess is too low)\n"
+                "0 if num is equal to the number I picked (your guess is correct)\n"
+                "Return the number I picked."
+            ),
+            tags = ["Binary Search"],
+            picked_number = picked_number
         )
-        self.tags = ["Binary Search"]
-        self.picked_number = picked_number
 
     def guess(self, num: int) -> int:
         if num < self.picked_number:
@@ -59,12 +64,4 @@ class GuessNumberHigherOrLower:
             print(f"Test passed for n = {n}, picked = {expected}: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Guess Number Higher or Lower\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = GuessNumberHigherOrLower(picked_number=6)
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

@@ -1,4 +1,5 @@
 from typing import Optional, List
+from src.Problems.AbstractProblem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -7,14 +8,17 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class InorderTraversal:
+class InorderTraversal(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/binary-tree-inorder-traversal/description/"
-        self.instructions = (
-            "Given the root of a binary tree, return the inorder traversal of its nodes' values."
+        super().__init__(
+            problem = "Binary Tree Inorder Traversal",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/binary-tree-inorder-traversal/description/",
+            instructions = (
+                "Given the root of a binary tree, return the inorder traversal of its nodes' values."
+            ),
+            tags = ["Binary Tree, Recursion"]
         )
-        self.tags = ["Binary Tree, Recursion"]
 
     def solution(self, root: Optional[TreeNode]) -> List[int]:
         self.result = []  # Reset result list for each traversal
@@ -49,7 +53,5 @@ class InorderTraversal:
             f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
         )
 
-# Create an instance of the problem
-solution = InorderTraversal()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+    def __str__(self):
+        return super().__str__()

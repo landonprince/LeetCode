@@ -1,4 +1,5 @@
 from typing import Optional
+from src.Problems.AbstractProblem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -7,16 +8,18 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class DeleteNodeInBST:
+class DeleteNodeInBST(AbstractProblem):
     def __init__(self):
-        self.difficulty = "medium"
-        self.link = "https://leetcode.com/problems/delete-node-in-a-bst/description/"
-        self.instructions = (
-            "Given a root node reference of a BST and a key, delete the node with the given key in the BST. "
-            "Return the root node reference of the updated BST."
+        super().__init__(
+            problem = "Delete Node in a BST",
+            difficulty = "medium",
+            link = "https://leetcode.com/problems/delete-node-in-a-bst/description/",
+            instructions = (
+                "Given a root node reference of a BST and a key, delete the node with the given key in the BST. "
+                "Return the root node reference of the updated BST."
+            ),
+            tags = ["Binary Search Tree, Depth-First Search, Recursion"]
         )
-        self.tags = ["Binary Search Tree, Depth-First Search, Recursion"]
-
     def solution(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         if root is None:
             return None
@@ -90,12 +93,4 @@ class DeleteNodeInBST:
         print(f"Test passed: {result_2}")
 
     def __str__(self):
-        return (
-            f"Problem: Delete Node in a BST\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = DeleteNodeInBST()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

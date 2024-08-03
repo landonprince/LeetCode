@@ -1,17 +1,21 @@
 from typing import List
+from src.Problems.AbstractProblem import AbstractProblem
 
-class LargestAltitude:
+class LargestAltitude(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/find-the-highest-altitude/description/"
-        self.instructions = (
-            "There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. "
-            "The biker starts his trip on point 0 with altitude equal 0.\n"
-            "You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i "
-            "and i + 1 for all (0 <= i < n).\n"
-            "Return the highest altitude of a point."
+        super().__init__(
+            problem = "Find the Highest Altitude",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/find-the-highest-altitude/description/",
+            instructions = (
+                "There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. "
+                "The biker starts his trip on point 0 with altitude equal 0.\n"
+                "You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i "
+                "and i + 1 for all (0 <= i < n).\n"
+                "Return the highest altitude of a point."
+            ),
+            tags = ["Array"]
         )
-        self.tags = ["Array"]
 
     def solution(self, gain: List[int]) -> int:
         max_altitude = 0
@@ -33,19 +37,15 @@ class LargestAltitude:
             ([1, 2, 3, 4, 5], 15),
             ([-1, -2, -3, -4], 0),
         ]
-
+        
         for gain, expected in test_cases:
             result = self.solution(gain)
             assert result == expected, f"Test failed: expected {expected}, got {result}"
             print(f"Test passed for gain = {gain}: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Find the Highest Altitude\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
+        return super().__str__()
+            
+        
 
-# Create an instance of the problem
-solution = LargestAltitude()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+

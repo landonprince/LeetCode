@@ -1,4 +1,5 @@
 from typing import Optional
+from src.Problems.AbstractProblem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -7,15 +8,18 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class MaxDepthBinaryTree:
+class MaxDepthBinaryTree(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/maximum-depth-of-binary-tree/description/"
-        self.instructions = (
-            "Given the root of a binary tree, return its maximum depth.\n"
-            "A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node."
+        super().__init__(
+            problem = "Maximum Depth of Binary Tree",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/maximum-depth-of-binary-tree/description/",
+            instructions = (
+                "Given the root of a binary tree, return its maximum depth.\n"
+                "A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node."
+            ),
+            tags = ["Binary Tree", "Depth-First Search"]
         )
-        self.tags = ["Binary Tree", "Depth-First Search"]
 
     def solution(self, root: Optional[TreeNode]) -> int:
         # Base case: if the node is None, the depth is 0
@@ -68,12 +72,6 @@ class MaxDepthBinaryTree:
         print(f"Test passed for test case 4: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Maximum Depth of Binary Tree\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
+        return super().__str__()
 
-# Create an instance of the problem
-solution = MaxDepthBinaryTree()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+    
