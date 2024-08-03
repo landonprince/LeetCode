@@ -1,26 +1,70 @@
-# The guess API is already defined for you.
-# @param num, your guess
-# @return -1 if num is higher than the picked number
-#          1 if num is lower than the picked number
-#          otherwise return 0
-# def guess(num: int) -> int:
+class GuessNumberHigherOrLower:
+    def __init__(self, picked_number: int):
+        self.difficulty = "easy"
+        self.link = "https://leetcode.com/problems/guess-number-higher-or-lower/description/"
+        self.instructions = (
+            "We are playing the Guess Game. The game is as follows:\n"
+            "I pick a number from 1 to n. You have to guess which number I picked.\n"
+            "Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.\n"
+            "You call a pre-defined API int guess(int num) which returns:\n"
+            "-1 if num is higher than the number I picked (your guess is too high)\n"
+            "1 if num is lower than the number I picked (your guess is too low)\n"
+            "0 if num is equal to the number I picked (your guess is correct)\n"
+            "Return the number I picked."
+        )
+        self.tags = ["Binary Search"]
+        self.picked_number = picked_number
 
-class Solution:
-    def guessNumber(self, n: int) -> int:
-        min = 1
-        max = n
+    def guess(self, num: int) -> int:
+        if num < self.picked_number:
+            return 1
+        elif num > self.picked_number:
+            return -1
+        else:
+            return 0
+
+    def solution(self, n: int) -> int:
+        min_val = 1
+        max_val = n
 
         # Binary search to find the picked number
-        while min <= max:
-            mid = min + (max - min) // 2
+        while min_val <= max_val:
+            mid = min_val + (max_val - min_val) // 2
 
-            if guess(mid) == 1:
-                min = mid + 1
-            elif guess(mid) == -1:
-                max = mid - 1
+            # Use the guess API to determine the next step
+            result = self.guess(mid)
+
+            if result == 1:
+                min_val = mid + 1
+            elif result == -1:
+                max_val = mid - 1
             else:
                 return mid
         return -1
 
-def guess(self, num: int) -> int:
-    return 0
+    def test(self):
+        # Test cases
+        test_cases = [
+            (10, 6),
+            (1, 1),
+            (100, 67),
+            (1000, 999),
+            (500, 123)
+        ]
+
+        for n, expected in test_cases:
+            self.picked_number = expected
+            result = self.solution(n)
+            assert result == expected, f"Test failed: expected {expected}, got {result}"
+            print(f"Test passed for n = {n}, picked = {expected}: {result}")
+
+    def __str__(self):
+        return (
+            f"Problem: Guess Number Higher or Lower\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
+            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
+        )
+
+# Create an instance of the problem
+solution = GuessNumberHigherOrLower(picked_number=6)
+print(solution)  # Display problem information
+solution.test()  # Run tests
