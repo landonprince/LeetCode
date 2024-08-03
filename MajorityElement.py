@@ -1,3 +1,5 @@
+from typing import List
+
 class MajorityElement:
     def __init__(self):
         self.difficulty = "easy"
@@ -7,9 +9,9 @@ class MajorityElement:
             "The majority element is the element that appears more than ⌊n / 2⌋ times.\n"
             "You may assume that the majority element always exists in the array."
         )
-        self.tags = ["Map"]
+        self.tags = ["Array, Map"]
 
-    def solution(self, nums: list[int]) -> int:
+    def solution(self, nums: List[int]) -> int:
         # Initialize a dictionary to store the count of each number
         count_dict = {}
 

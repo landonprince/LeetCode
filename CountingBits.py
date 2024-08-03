@@ -1,3 +1,5 @@
+from typing import List
+
 class CountingBits:
     def __init__(self):
         self.difficulty = "easy"
@@ -6,10 +8,10 @@ class CountingBits:
             "Given an integer n, return an array ans of length n + 1 such that "
             "for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i."
         )
-        self.tags = ["Bit Manipulation"]
+        self.tags = ["Array, Bit Manipulation"]
 
 
-    def solution(self, n: int) -> list[int]:
+    def solution(self, n: int) -> List[int]:
         # Create a result array of size n+1 initialized to 0
         result = [0] * (n + 1)
         
@@ -35,7 +37,5 @@ class CountingBits:
 
 # Create an instance of the problem
 solution = CountingBits()
-print(solution)
-print()  # Display problem information
+print(solution) # Display problem information
 solution.test()  # Run tests
-print()

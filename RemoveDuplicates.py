@@ -1,3 +1,5 @@
+from typing import List
+
 class RemoveDuplicatesFromSortedArray:
     def __init__(self):
         self.difficulty = "easy"
@@ -10,7 +12,7 @@ class RemoveDuplicatesFromSortedArray:
         )
         self.tags = ["Array", "Two Pointers"]
 
-    def solution(self, nums: list[int]) -> int:
+    def solution(self, nums: List[int]) -> int:
         # Edge case: if the array is empty, return 0
         if not nums:
             return 0

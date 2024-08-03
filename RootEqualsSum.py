@@ -15,7 +15,7 @@ class CheckTree:
             "You are given the root node of a binary tree with exactly 3 nodes: the root, its left child, and its right child.\n"
             "Return true if the value of the root is equal to the sum of the values of its two children, or false otherwise."
         )
-        self.tags = ["Binary Tree"]
+        self.tags = ["Binary Tree, Recursion"]
 
     def solution(self, root: Optional[TreeNode]) -> bool:
         # Check if the sum of left and right children is equal to the root's value

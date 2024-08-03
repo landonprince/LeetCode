@@ -1,3 +1,5 @@
+from typing import List
+
 class SingleNumber:
     def __init__(self):
         self.difficulty = "easy"
@@ -8,7 +10,7 @@ class SingleNumber:
         )
         self.tags = ["Array", "Bit Manipulation"]
 
-    def solution(self, nums: list[int]) -> int:
+    def solution(self, nums: List[int]) -> int:
         # XOR all numbers in the array
         result = 0
         for num in nums:

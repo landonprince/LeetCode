@@ -14,7 +14,7 @@ class PreorderTraversal:
         self.instructions = (
             "Given the root of a binary tree, return the preorder traversal of its nodes' values."
         )
-        self.tags = ["Binary Tree"]
+        self.tags = ["Binary Tree, Recursion"]
 
     def solution(self, root: Optional[TreeNode]) -> List[int]:
         result = []

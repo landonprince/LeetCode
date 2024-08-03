@@ -1,4 +1,6 @@
 class MergeSortedArray:
+    from typing import List
+    
     def __init__(self):
         self.difficulty = "easy"
         self.link = "https://leetcode.com/problems/merge-sorted-array/description/"
@@ -10,7 +12,7 @@ class MergeSortedArray:
         )
         self.tags = ["Array", "Two Pointers"]
 
-    def solution(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+    def solution(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         # Pointers for nums1 and nums2
         p1 = m - 1
         p2 = n - 1

@@ -1,3 +1,5 @@
+from typing import List
+
 class TwoSum:
     def __init__(self):
         self.difficulty = "easy"
@@ -9,7 +11,7 @@ class TwoSum:
         )
         self.tags = ["Array", "Map"]
 
-    def solution(self, nums: list[int], target: int) -> list[int]:
+    def solution(self, nums: List[int], target: int) -> List[int]:
         # Create a dictionary to store the numbers and their indices
         num_dict = {}
 

@@ -1,3 +1,5 @@
+from typing import List
+
 class RemoveElement:
     def __init__(self):
         self.difficulty = "easy"
@@ -10,7 +12,7 @@ class RemoveElement:
         )
         self.tags = ["Array", "Two Pointers"]
 
-    def solution(self, nums: list[int], val: int) -> int:
+    def solution(self, nums: List[int], val: int) -> int:
         # Initialize a pointer for the position to overwrite
         slow = 0
 

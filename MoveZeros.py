@@ -1,3 +1,5 @@
+from typing import List
+
 class MoveZeroes:
     def __init__(self):
         self.difficulty = "easy"
@@ -9,7 +11,7 @@ class MoveZeroes:
         )
         self.tags = ["Array"]
 
-    def solution(self, nums: list[int]) -> None:
+    def solution(self, nums: List[int]) -> None:
         # Two-pointer approach
         last_non_zero_found_at = 0
 

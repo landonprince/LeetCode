@@ -1,3 +1,5 @@
+from typing import List
+
 class SearchInsertPosition:
     def __init__(self):
         self.difficulty = "easy"
@@ -8,7 +10,7 @@ class SearchInsertPosition:
         )
         self.tags = ["Array", "Binary Search"]
 
-    def solution(self, nums: list[int], target: int) -> int:
+    def solution(self, nums: List[int], target: int) -> int:
         # Initialize two pointers
         left = 0
         right = len(nums) - 1
