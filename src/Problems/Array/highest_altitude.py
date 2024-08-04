@@ -1,7 +1,7 @@
 from typing import List
-from Problems.AbstractProblem import AbstractProblem
+from problems.AbstractProblem import AbstractProblem
 
-class LargestAltitude(AbstractProblem):
+class HighestAltitude(AbstractProblem):
     def __init__(self):
         super().__init__(
             problem = "Find the Highest Altitude",

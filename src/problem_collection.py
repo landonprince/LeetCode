@@ -17,7 +17,7 @@ def import_submodules(package_name: str):
             importlib.import_module(full_module_name)
 
 # Dynamically import all modules in Problems
-import_submodules('Problems')
+import_submodules('problems')
 
 class ProblemCollection:
     def __init__(self):
