@@ -7,8 +7,6 @@ class UniqueOccurrences(AbstractProblem):
             problem = "Unique Number of Occurrences",
             difficulty = "easy",
             link = "https://leetcode.com/problems/unique-number-of-occurrences/description/",
-            difficulty = "easy",
-            link = "https://leetcode.com/problems/unique-number-of-occurrences/description/",
             instructions = (
                 "Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique."
             ),

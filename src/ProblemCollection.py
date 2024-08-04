@@ -27,7 +27,6 @@ class ProblemCollection:
     def collectProblems(self) -> List[AbstractProblem]:
         # Discover all subclasses of AbstractProblem
         problem_classes = AbstractProblem.__subclasses__()
-        print(f"Discovered subclasses: {problem_classes}")  # Debug: check discovered classes
         return [cls() for cls in problem_classes]
 
     def collectDifficulties(self) -> List[str]:
@@ -38,7 +37,7 @@ class ProblemCollection:
 
     def display_all_problems(self):
         for problem in self.problemList:
-            print(f"\nProblem:\n{problem}\n")
+            print(f"\n{problem}\n")
 
     def test_all_problems(self):
         for problem in self.problemList:

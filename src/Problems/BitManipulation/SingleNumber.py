@@ -4,6 +4,7 @@ from Problems.AbstractProblem import AbstractProblem
 class SingleNumber(AbstractProblem):
     def __init__(self):
         super().__init__(
+            problem = "Single Number",
             difficulty = "easy",
             link = "https://leetcode.com/problems/single-number/description/",
             instructions = (
