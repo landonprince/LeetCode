@@ -8,9 +8,10 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class SearchInBST:
+class SearchInBST(AbstractProblem):
     def __init__(self):
         super().__init__(
+            problem = "Search in a Binary Search Tree",
             difficulty = "easy",
             link = "https://leetcode.com/problems/search-in-a-binary-search-tree/description/",
             instructions = (

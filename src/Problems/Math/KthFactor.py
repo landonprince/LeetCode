@@ -1,13 +1,18 @@
-class KthFactor:
+from Problems.AbstractProblem import AbstractProblem
+
+class KthFactor(AbstractProblem):
     def __init__(self):
-        self.difficulty = "medium"
-        self.link = "https://leetcode.com/problems/the-kth-factor-of-n/description/"
-        self.instructions = (
-            "Given two positive integers n and k, return the kth factor of n."
-            "A factor of an integer n is defined as an integer i where n % i == 0.\n"
-            "If there are fewer than k factors, return -1."
+        super().__init__(
+            problem = "The Kth Factor of N",
+            difficulty = "medium",
+            link = "https://leetcode.com/problems/the-kth-factor-of-n/description/",
+            instructions = (
+                "Given two positive integers n and k, return the kth factor of n."
+                "A factor of an integer n is defined as an integer i where n % i == 0.\n"
+                "If there are fewer than k factors, return -1."
+            ),
+            tags = ["Math"]
         )
-        self.tags = ["Math"]
 
     def solution(self, n: int, k: int) -> int:
         factors = []
@@ -39,12 +44,4 @@ class KthFactor:
             print(f"Test passed for n = {n}, k = {k}: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: The kth Factor of n\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = KthFactor()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

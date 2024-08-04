@@ -1,12 +1,17 @@
-class LengthOfLastWord:
+from Problems.AbstractProblem import AbstractProblem
+
+class LengthOfLastWord(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/length-of-last-word/description/"
-        self.instructions = (
-            "Given a string s consisting of words and spaces, return the length of the last word in the string.\n"
-            "A word is a maximal substring consisting of non-space characters only."
+        super().__init__(
+            problem = "Length of Last Word",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/length-of-last-word/description/",
+            instructions = (
+                "Given a string s consisting of words and spaces, return the length of the last word in the string.\n"
+                "A word is a maximal substring consisting of non-space characters only."
+            ),
+            tags = ["String"]
         )
-        self.tags = ["String"]
 
     def solution(self, s: str) -> int:
         # Split the string into words
@@ -35,12 +40,4 @@ class LengthOfLastWord:
             print(f"Test passed for string = '{s}': {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Length of Last Word\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = LengthOfLastWord()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

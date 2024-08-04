@@ -1,4 +1,5 @@
 from typing import Optional
+from Problems.AbstractProblem import AbstractProblem
 
 # Definition for singly-linked list.
 class ListNode:
@@ -6,15 +7,18 @@ class ListNode:
         self.val = val
         self.next = next
 
-class RemoveNthFromEnd:
+class RemoveNthFromEnd(AbstractProblem):
     def __init__(self):
-        self.difficulty = "medium"
-        self.link = "https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/"
-        self.instructions = (
-            "Given the head of a linked list, remove the nth node from the end of the list and return its head.\n"
-            "Try to do this in one pass using two pointers."
+        super().__init__(
+            problem = "Remove Nth Node From End of List",
+            difficulty = "medium",
+            link = "https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/",
+            instructions = (
+                "Given the head of a linked list, remove the nth node from the end of the list and return its head.\n"
+                "Try to do this in one pass using two pointers."
+            ),
+            tags = ["Linked List"]
         )
-        self.tags = ["Linked List"]
 
     def solution(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         cur = head
@@ -85,12 +89,4 @@ class RemoveNthFromEnd:
         print(f"Test passed for test case 3: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Remove Nth Node From End of List\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = RemoveNthFromEnd()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

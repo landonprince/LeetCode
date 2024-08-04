@@ -1,13 +1,18 @@
-class StrStr:
+from Problems.AbstractProblem import AbstractProblem
+
+class StrStr(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/implement-strstr/description/"
-        self.instructions = (
-            "Implement strStr().\n"
-            "Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, "
-            "or -1 if needle is not part of haystack."
+        super().__init__(
+            problem = "Implement strStr()",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/implement-strstr/description/",
+            instructions = (
+                "Implement strStr().\n"
+                "Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, "
+                "or -1 if needle is not part of haystack."
+            ),
+            tags = ["String"]
         )
-        self.tags = ["String"]
 
     def solution(self, haystack: str, needle: str) -> int:
         # Check if needle is in haystack
@@ -32,12 +37,4 @@ class StrStr:
             print(f"Test passed for haystack = '{haystack}', needle = '{needle}': {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Implement strStr\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = StrStr()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

@@ -1,15 +1,19 @@
 from typing import List
+from Problems.AbstractProblem import AbstractProblem
 
-class TwoSum:
+class TwoSum(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/two-sum/description/"
-        self.instructions = (
-            "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n"
-            "You may assume that each input would have exactly one solution, and you may not use the same element twice.\n"
-            "You can return the answer in any order."
+        super().__init__(
+            problem = "Two Sum",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/two-sum/description/",
+            instructions = (
+                "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n"
+                "You may assume that each input would have exactly one solution, and you may not use the same element twice.\n"
+                "You can return the answer in any order."
+            ),
+            tags = ["Array", "Map"]
         )
-        self.tags = ["Array", "Map"]
 
     def solution(self, nums: List[int], target: int) -> List[int]:
         # Create a dictionary to store the numbers and their indices
@@ -46,12 +50,4 @@ class TwoSum:
             print(f"Test passed for nums = {nums}, target = {target}: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Two Sum\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = TwoSum()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

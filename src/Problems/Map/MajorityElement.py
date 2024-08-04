@@ -1,15 +1,19 @@
 from typing import List
+from Problems.AbstractProblem import AbstractProblem
 
-class MajorityElement:
+class MajorityElement(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/majority-element/description/"
-        self.instructions = (
-            "Given an array nums of size n, return the majority element.\n"
-            "The majority element is the element that appears more than ⌊n / 2⌋ times.\n"
-            "You may assume that the majority element always exists in the array."
+        super().__init__(
+            problem = "Majority Element",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/majority-element/description/",
+            instructions = (
+                "Given an array nums of size n, return the majority element.\n"
+                "The majority element is the element that appears more than ⌊n / 2⌋ times.\n"
+                "You may assume that the majority element always exists in the array."
+            ),
+            tags = ["Array, Map"]
         )
-        self.tags = ["Array, Map"]
 
     def solution(self, nums: List[int]) -> int:
         # Initialize a dictionary to store the count of each number
@@ -43,12 +47,4 @@ class MajorityElement:
             print(f"Test passed for nums = {nums}: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Majority Element\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = MajorityElement()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

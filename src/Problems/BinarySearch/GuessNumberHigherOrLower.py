@@ -1,7 +1,7 @@
 from Problems.AbstractProblem import AbstractProblem
 
 class GuessNumberHigherOrLower(AbstractProblem):
-    def __init__(self, picked_number: int):
+    def __init__(self):
         super().__init__(
             problem = "Guess Number Higher or Lower",
             difficulty = "easy",
@@ -17,7 +17,6 @@ class GuessNumberHigherOrLower(AbstractProblem):
                 "Return the number I picked."
             ),
             tags = ["Binary Search"],
-            picked_number = picked_number
         )
 
     def guess(self, num: int) -> int:

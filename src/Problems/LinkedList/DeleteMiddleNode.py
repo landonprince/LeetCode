@@ -1,4 +1,5 @@
 from typing import Optional
+from Problems.AbstractProblem import AbstractProblem
 
 # Definition for singly-linked list.
 class ListNode:
@@ -6,15 +7,18 @@ class ListNode:
         self.val = val
         self.next = next
 
-class DeleteMiddleNode:
+class DeleteMiddleNode(AbstractProblem):
     def __init__(self):
-        self.difficulty = "medium"
-        self.link = "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/"
-        self.instructions = (
-            "You are given the head of a linked list. Delete the middle node, "
-            "and return the head of the modified linked list."
+        super().__init__(
+            problem = "Delete the Middle Node of a Linked List",
+            difficulty = "medium",
+            link = "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/",
+            instructions = (
+                "You are given the head of a linked list. Delete the middle node, "
+                "and return the head of the modified linked list."
+            ),
+            tags = ["Linked List", "Two Pointers"]
         )
-        self.tags = ["Linked List", "Two Pointers"]
 
     def solution(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
@@ -61,12 +65,4 @@ class DeleteMiddleNode:
             print(f"Test passed: {result_array}")
 
     def __str__(self):
-        return (
-            f"Problem: Delete Middle Node\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = DeleteMiddleNode()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

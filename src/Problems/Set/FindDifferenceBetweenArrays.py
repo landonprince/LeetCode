@@ -1,16 +1,20 @@
 from typing import List
+from Problems.AbstractProblem import AbstractProblem
 
-class FindDifferenceBetweenArrays:
+class FindDifferenceBetweenArrays(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/find-the-difference-of-two-arrays/description/"
-        self.instructions = (
-            "Given two integer arrays nums1 and nums2, return a list answer of size 2 where:\n"
-            "answer[0] is a list of all distinct integers in nums1 which are not present in nums2.\n"
-            "answer[1] is a list of all distinct integers in nums2 which are not present in nums1.\n"
-            "Note that the integers in the lists may be returned in any order."
+        super().__init__(
+            problem = "Find the Difference Between Two Arrays",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/find-the-difference-of-two-arrays/description/",
+            instructions = (
+                "Given two integer arrays nums1 and nums2, return a list answer of size 2 where:\n"
+                "answer[0] is a list of all distinct integers in nums1 which are not present in nums2.\n"
+                "answer[1] is a list of all distinct integers in nums2 which are not present in nums1.\n"
+                "Note that the integers in the lists may be returned in any order."
+            ),
+            tags = ["Array, Set"]
         )
-        self.tags = ["Array, Set"]
 
     def solution(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
         # Convert nums1 and nums2 to sets to remove duplicates and allow for set operations
@@ -37,12 +41,4 @@ class FindDifferenceBetweenArrays:
             print(f"Test passed: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Find the Difference of Two Arrays\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = FindDifferenceBetweenArrays()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

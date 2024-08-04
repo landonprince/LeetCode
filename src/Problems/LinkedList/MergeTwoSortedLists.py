@@ -1,4 +1,5 @@
 from typing import Optional
+from Problems.AbstractProblem import AbstractProblem
 
 # Definition for singly-linked list.
 class ListNode:
@@ -6,15 +7,18 @@ class ListNode:
         self.val = val
         self.next = next
 
-class MergeTwoSortedLists:
+class MergeTwoSortedLists(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/merge-two-sorted-lists/description/"
-        self.instructions = (
-            "Merge two sorted linked lists and return it as a sorted list. "
-            "The list should be made by splicing together the nodes of the first two lists."
+        super().__init__(
+            problem = "Merge Two Sorted Lists",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/merge-two-sorted-lists/description/",
+            instructions = (
+                "Merge two sorted linked lists and return it as a sorted list. "
+                "The list should be made by splicing together the nodes of the first two lists."
+            ),
+            tags = ["Linked List"]
         )
-        self.tags = ["Linked List"]
 
     def solution(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         # Create a dummy node to help simplify the merging process
@@ -84,12 +88,4 @@ class MergeTwoSortedLists:
         print(f"Test passed for test case 3: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Merge Two Sorted Lists\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = MergeTwoSortedLists()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

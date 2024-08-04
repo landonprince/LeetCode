@@ -1,13 +1,19 @@
 from typing import List
+from Problems.AbstractProblem import AbstractProblem
 
-class UniqueOccurrences:
+class UniqueOccurrences(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/unique-number-of-occurrences/description/"
-        self.instructions = (
-            "Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique."
+        super().__init__(
+            problem = "Unique Number of Occurrences",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/unique-number-of-occurrences/description/",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/unique-number-of-occurrences/description/",
+            instructions = (
+                "Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique."
+            ),
+            tags = ["Array", "Map"]
         )
-        self.tags = ["Array", "Map"]
 
     def solution(self, nums: List[int]) -> bool:
         # Count the occurrences of each number in the array
@@ -47,12 +53,4 @@ class UniqueOccurrences:
             print(f"Test passed for nums = {nums}: {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Unique Number of Occurrences\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = UniqueOccurrences()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()
