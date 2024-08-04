@@ -1,16 +1,21 @@
-class MergeSortedArray:
+from Problems.AbstractProblem import AbstractProblem
+
+class MergeSortedArray(AbstractProblem):
     from typing import List
     
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/merge-sorted-array/description/"
-        self.instructions = (
-            "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, "
-            "representing the number of elements in nums1 and nums2 respectively.\n"
-            "Merge nums1 and nums2 into a single array sorted in non-decreasing order.\n"
-            "The final sorted array should not be returned by the function, but instead be stored inside the array nums1."
+        super().__init__(
+            problem = "Merge Sorted Array",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/merge-sorted-array/description/",
+            instructions = (
+                "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, "
+                "representing the number of elements in nums1 and nums2 respectively.\n"
+                "Merge nums1 and nums2 into a single array sorted in non-decreasing order.\n"
+                "The final sorted array should not be returned by the function, but instead be stored inside the array nums1."
+            ),
+            tags = ["Array", "Two Pointers"]
         )
-        self.tags = ["Array", "Two Pointers"]
 
     def solution(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         # Pointers for nums1 and nums2
@@ -52,12 +57,4 @@ class MergeSortedArray:
             print(f"Test passed for nums1 = {nums1}, nums2 = {nums2}: {nums1_copy}")
 
     def __str__(self):
-        return (
-            f"Problem: Merge Sorted Array\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = MergeSortedArray()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

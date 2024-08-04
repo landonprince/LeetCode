@@ -1,16 +1,20 @@
 from typing import List
+from Problems.AbstractProblem import AbstractProblem
 
-class RemoveDuplicatesFromSortedArray:
+class RemoveDuplicatesFromSortedArray(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/"
-        self.instructions = (
-            "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each "
-            "unique element appears only once. The relative order of the elements should be kept the same.\n"
-            "Return the length of the resulting array.\n"
-            "Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory."
+        super().__init__(
+            problem = "Remove Duplicates from Sorted Array",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/",
+            instructions = (
+                "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each "
+                "unique element appears only once. The relative order of the elements should be kept the same.\n"
+                "Return the length of the resulting array.\n"
+                "Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory."
+            ),
+            tags = ["Array", "Two Pointers"]
         )
-        self.tags = ["Array", "Two Pointers"]
 
     def solution(self, nums: List[int]) -> int:
         # Edge case: if the array is empty, return 0
@@ -47,12 +51,4 @@ class RemoveDuplicatesFromSortedArray:
             print(f"Test passed for nums = {nums}: {nums_copy[:length]}")
 
     def __str__(self):
-        return (
-            f"Problem: Remove Duplicates from Sorted Array\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = RemoveDuplicatesFromSortedArray()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

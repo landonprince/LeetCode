@@ -1,12 +1,17 @@
-class ReverseVowels:
+from Problems.AbstractProblem import AbstractProblem
+
+class ReverseVowels(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/reverse-vowels-of-a-string/description/"
-        self.instructions = (
-            "Given a string s, reverse only all the vowels in the string and return it.\n"
-            "The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once."
+        super().__init__(
+            problem = "Reverse Vowels of a String",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/reverse-vowels-of-a-string/description/",
+            instructions = (
+                "Given a string s, reverse only all the vowels in the string and return it.\n"
+                "The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once."
+            ),
+            tags = ["String", "Two Pointers"]
         )
-        self.tags = ["String", "Two Pointers"]
 
     def solution(self, s: str) -> str:
         # Use two pointers to find vowels and swap them
@@ -44,12 +49,4 @@ class ReverseVowels:
             print(f"Test passed for string = '{string}': {result}")
 
     def __str__(self):
-        return (
-            f"Problem: Reverse Vowels of a String\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-# Create an instance of the problem
-solution = ReverseVowels()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+        return super().__str__()

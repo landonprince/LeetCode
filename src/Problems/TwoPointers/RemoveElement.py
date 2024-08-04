@@ -1,16 +1,20 @@
 from typing import List
+from Problems.AbstractProblem import AbstractProblem
 
-class RemoveElement:
+class RemoveElement(AbstractProblem):
     def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/remove-element/description/"
-        self.instructions = (
-            "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. "
-            "The relative order of the elements may be changed.\n"
-            "Return the number of elements in nums which are not equal to val.\n"
-            "Note that it is not necessary to change the input array's size in memory, just the number of elements considered."
+        super().__init__(
+            problem = "Remove Element",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/remove-element/description/",
+            instructions = (
+                "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. "
+                "The relative order of the elements may be changed.\n"
+                "Return the number of elements in nums which are not equal to val.\n"
+                "Note that it is not necessary to change the input array's size in memory, just the number of elements considered."
+            ),
+            tags = ["Array", "Two Pointers"]
         )
-        self.tags = ["Array", "Two Pointers"]
 
     def solution(self, nums: List[int], val: int) -> int:
         # Initialize a pointer for the position to overwrite
@@ -48,7 +52,5 @@ class RemoveElement:
             f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
         )
 
-# Create an instance of the problem
-solution = RemoveElement()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+    def __str__(self):
+        return super().__str__()

@@ -36,5 +36,4 @@ class StrStr(AbstractProblem):
             assert result == expected, f"Test failed: expected {expected}, got {result}"
             print(f"Test passed for haystack = '{haystack}', needle = '{needle}': {result}")
 
-    def __str__(self):
-        return super().__str__()
+
