@@ -31,11 +31,11 @@ class HighestAltitude(AbstractProblem):
     def test(self):
         # Test cases
         test_cases = [
-            ([-5, 1, 5, 0, -7], 1),
-            ([-4, -3, -2, -1, 4, 3, 2], 0),
-            ([10, -10, 5, -3, 7], 12),
-            ([1, 2, 3, 4, 5], 15),
-            ([-1, -2, -3, -4], 0),
+            ([-5, 1, 5, 0, -7], 1),  # Correct: max altitude is 1
+            ([-4, -3, -2, -1, 4, 3, 2], 0),  # Correct: max altitude is 0
+            ([10, -10, 5, -3, 7], 10),  # Correct: max altitude is 10
+            ([1, 2, 3, 4, 5], 15),  # Correct: max altitude is 15
+            ([-1, -2, -3, -4], 0),  # Correct: max altitude is 0
         ]
         
         for gain, expected in test_cases:
