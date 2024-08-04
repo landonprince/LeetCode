@@ -1,5 +1,5 @@
 from typing import List
-from Problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 class SingleNumber(AbstractProblem):
     def __init__(self):

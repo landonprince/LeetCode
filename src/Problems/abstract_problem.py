@@ -1,5 +1,8 @@
+from typing import List
+
 class AbstractProblem:
-    def __init__(self, problem: str, difficulty: str, link: str, instructions: str, tags: list[str]):
+    def __init__(self, problem: str, difficulty: str, link: str, instructions: str, tags: List[str]):
+        # Initialize the problem with the given attributes
         self.problem = problem
         self.difficulty = difficulty
         self.link = link
@@ -13,6 +16,7 @@ class AbstractProblem:
         raise NotImplementedError("Subclasses should implement this method.")
 
     def __str__(self):
+        # Return a formatted string representation of the problem
         return (
             f"Problem: {self.problem}\n"
             f"Difficulty: {self.difficulty}\n"

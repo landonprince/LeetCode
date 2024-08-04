@@ -1,5 +1,5 @@
 from typing import Optional, List
-from Problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:

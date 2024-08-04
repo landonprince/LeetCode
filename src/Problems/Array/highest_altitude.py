@@ -1,5 +1,5 @@
 from typing import List
-from problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 class HighestAltitude(AbstractProblem):
     def __init__(self):

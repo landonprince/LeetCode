@@ -1,4 +1,4 @@
-from Problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 class GuessNumberHigherOrLower(AbstractProblem):
     def __init__(self):

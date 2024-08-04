@@ -1,4 +1,4 @@
-from Problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 class MergeSortedArray(AbstractProblem):
     from typing import List

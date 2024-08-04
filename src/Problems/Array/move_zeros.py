@@ -1,5 +1,5 @@
 from typing import List
-from Problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 class MoveZeroes(AbstractProblem):
     def __init__(self):

@@ -1,5 +1,5 @@
 from typing import Optional
-from Problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 # Definition for singly-linked list.
 class ListNode:

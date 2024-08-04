@@ -1,5 +1,5 @@
 from typing import Optional
-from Problems.AbstractProblem import AbstractProblem
+from problems.abstract_problem import AbstractProblem
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -27,11 +27,11 @@ class MaxDepthBinaryTree(AbstractProblem):
             return 0
 
         # Recursively calculate the depth of the left and right subtrees
-        leftDepth = self.solution(root.left)
-        rightDepth = self.solution(root.right)
+        left_depth = self.solution(root.left)
+        right_depth = self.solution(root.right)
 
         # Return the maximum depth of the left and right subtrees plus 1 for the current node's depth
-        return max(leftDepth, rightDepth) + 1
+        return max(left_depth, right_depth) + 1
 
     def test(self):
         # Construct a binary tree for testing
