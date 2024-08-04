@@ -1,4 +1,4 @@
-from src.Problems.AbstractProblem import AbstractProblem
+from Problems.AbstractProblem import AbstractProblem
 
 class FirstBadVersion(AbstractProblem):
     def __init__(self):

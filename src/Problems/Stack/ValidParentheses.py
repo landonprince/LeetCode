@@ -1,16 +1,20 @@
-class ValidParentheses:
-    def __init__(self):
-        self.difficulty = "easy"
-        self.link = "https://leetcode.com/problems/valid-parentheses/description/"
-        self.instructions = (
-            "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', "
-            "determine if the input string is valid.\n"
-            "An input string is valid if:\n"
-            "1. Open brackets must be closed by the same type of brackets.\n"
-            "2. Open brackets must be closed in the correct order."
-        )
-        self.tags = ["String", "Stack"]
+from Problems.AbstractProblem import AbstractProblem
 
+class ValidParentheses(AbstractProblem):
+    def __init__(self):
+        super().__init__(
+            problem = "Valid Parentheses",
+            difficulty = "easy",
+            link = "https://leetcode.com/problems/valid-parentheses/description/",
+            instructions = (
+                "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', "
+                "determine if the input string is valid.\n"
+                "An input string is valid if:\n"
+                "1. Open brackets must be closed by the same type of brackets.\n"
+                "2. Open brackets must be closed in the correct order."
+            ),
+            tags = ["String", "Stack"]
+        )
     def solution(self, s: str) -> bool:
         # Use a stack to keep track of opening parentheses
         stack = []
@@ -53,7 +57,5 @@ class ValidParentheses:
             f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
         )
 
-# Create an instance of the problem
-solution = ValidParentheses()
-print(solution)  # Display problem information
-solution.test()  # Run tests
+    def __str__(self):
+            return super().__str__()

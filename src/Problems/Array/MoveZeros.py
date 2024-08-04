@@ -1,18 +1,18 @@
 from typing import List
-from src.Problems.AbstractProblem import AbstractProblem
+from Problems.AbstractProblem import AbstractProblem
 
 class MoveZeroes(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Move Zeroes",
-            difficulty = "easy",
-            link = "https://leetcode.com/problems/move-zeroes/description/",
-            instructions = (
+            problem="Move Zeroes",
+            difficulty="easy",
+            link="https://leetcode.com/problems/move-zeroes/description/",
+            instructions=(
                 "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the "
                 "non-zero elements.\n"
                 "Note that you must do this in-place without making a copy of the array."
             ),
-            tags = ["Array"]
+            tags=["Array"]
         )
 
     def solution(self, nums: List[int]) -> None:
@@ -47,4 +47,3 @@ class MoveZeroes(AbstractProblem):
 
     def __str__(self):
         return super().__str__()
-
