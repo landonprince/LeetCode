@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class ValidParentheses(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Valid Parentheses",
+            name = "Valid Parentheses",
             difficulty = "easy",
             link = "https://leetcode.com/problems/valid-parentheses/description/",
             instructions = (

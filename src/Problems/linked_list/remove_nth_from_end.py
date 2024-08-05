@@ -10,7 +10,7 @@ class ListNode:
 class RemoveNthFromEnd(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Remove Nth Node From End of List",
+            name = "Remove Nth Node From End of List",
             difficulty = "medium",
             link = "https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/",
             instructions = (

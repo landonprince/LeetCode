@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class KthFactor(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "The Kth Factor of N",
+            name = "The Kth Factor of N",
             difficulty = "medium",
             link = "https://leetcode.com/problems/the-kth-factor-of-n/description/",
             instructions = (

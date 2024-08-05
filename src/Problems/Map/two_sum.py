@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class TwoSum(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Two Sum",
+            name = "Two Sum",
             difficulty = "easy",
             link = "https://leetcode.com/problems/two-sum/description/",
             instructions = (

@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class RemoveElement(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Remove Element",
+            name = "Remove Element",
             difficulty = "easy",
             link = "https://leetcode.com/problems/remove-element/description/",
             instructions = (

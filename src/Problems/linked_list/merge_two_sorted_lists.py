@@ -10,7 +10,7 @@ class ListNode:
 class MergeTwoSortedLists(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Merge Two Sorted Lists",
+            name = "Merge Two Sorted Lists",
             difficulty = "easy",
             link = "https://leetcode.com/problems/merge-two-sorted-lists/description/",
             instructions = (

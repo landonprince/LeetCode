@@ -11,7 +11,7 @@ class TreeNode:
 class DeleteNodeInBST(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Delete Node in a BST",
+            name = "Delete Node in a BST",
             difficulty = "medium",
             link = "https://leetcode.com/problems/delete-node-in-a-bst/description/",
             instructions = (

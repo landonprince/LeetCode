@@ -10,7 +10,7 @@ class ListNode:
 class DeleteMiddleNode(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Delete the Middle Node of a Linked List",
+            name = "Delete the Middle Node of a Linked List",
             difficulty = "medium",
             link = "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/",
             instructions = (

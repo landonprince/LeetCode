@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class ReverseVowels(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Reverse Vowels of a String",
+            name = "Reverse Vowels of a String",
             difficulty = "easy",
             link = "https://leetcode.com/problems/reverse-vowels-of-a-string/description/",
             instructions = (

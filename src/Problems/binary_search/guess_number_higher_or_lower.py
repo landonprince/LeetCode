@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class GuessNumberHigherOrLower(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Guess Number Higher or Lower",
+            name = "Guess Number Higher or Lower",
             difficulty = "easy",
             link = "https://leetcode.com/problems/guess-number-higher-or-lower/description/",
             instructions = (

@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class HighestAltitude(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Find the Highest Altitude",
+            name = "Find the Highest Altitude",
             difficulty = "easy",
             link = "https://leetcode.com/problems/find-the-highest-altitude/description/",
             instructions = (

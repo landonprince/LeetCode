@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class UniqueOccurrences(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Unique Number of Occurrences",
+            name = "Unique Number of Occurrences",
             difficulty = "easy",
             link = "https://leetcode.com/problems/unique-number-of-occurrences/description/",
             instructions = (

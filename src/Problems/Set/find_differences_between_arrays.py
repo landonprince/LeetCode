@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class FindDifferenceBetweenArrays(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Find the Difference Between Two Arrays",
+            name = "Find the Difference Between Two Arrays",
             difficulty = "easy",
             link = "https://leetcode.com/problems/find-the-difference-of-two-arrays/description/",
             instructions = (

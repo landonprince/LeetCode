@@ -1,9 +1,9 @@
 from typing import List
 
 class AbstractProblem:
-    def __init__(self, problem: str, difficulty: str, link: str, instructions: str, tags: List[str]):
+    def __init__(self, name: str, difficulty: str, link: str, instructions: str, tags: List[str]):
         # Initialize the problem with the given attributes
-        self.problem = problem
+        self.name = name
         self.difficulty = difficulty
         self.link = link
         self.instructions = instructions
@@ -18,7 +18,7 @@ class AbstractProblem:
     def __str__(self):
         # Return a formatted string representation of the problem
         return (
-            f"Problem: {self.problem}\n"
+            f"Problem Name: {self.name}\n"
             f"Difficulty: {self.difficulty}\n"
             f"Link: {self.link}\n"
             f"Instructions: {self.instructions}\n"

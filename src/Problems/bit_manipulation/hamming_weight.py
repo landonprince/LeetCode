@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class HammingWeight(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Hamming Weight",
+            name = "Hamming Weight",
             difficulty = "easy",
             link = "https://leetcode.com/problems/number-of-1-bits/description/",
             instructions = (

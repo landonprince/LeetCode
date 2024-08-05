@@ -11,7 +11,7 @@ class TreeNode:
 class MaxDepthBinaryTree(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Maximum Depth of Binary Tree",
+            name = "Maximum Depth of Binary Tree",
             difficulty = "easy",
             link = "https://leetcode.com/problems/maximum-depth-of-binary-tree/description/",
             instructions = (

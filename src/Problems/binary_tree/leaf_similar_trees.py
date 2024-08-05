@@ -11,7 +11,7 @@ class TreeNode:
 class LeafSimilarTrees(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Leaf-Similar Trees",
+            name = "Leaf-Similar Trees",
             difficulty = "easy",
             link = "https://leetcode.com/problems/leaf-similar-trees/description/",
             instructions = (

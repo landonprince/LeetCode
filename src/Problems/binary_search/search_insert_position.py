@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class SearchInsertPosition(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Search Insert Position",
+            name = "Search Insert Position",
             difficulty = "easy",
             link = "https://leetcode.com/problems/search-insert-position/description/",
             instructions = (

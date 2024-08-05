@@ -11,7 +11,7 @@ class TreeNode:
 class InorderTraversal(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Binary Tree Inorder Traversal",
+            name = "Binary Tree Inorder Traversal",
             difficulty = "easy",
             link = "https://leetcode.com/problems/binary-tree-inorder-traversal/description/",
             instructions = (

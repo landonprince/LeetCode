@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class ReverseWords(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Reverse Words in a String",
+            name = "Reverse Words in a String",
             difficulty = "medium",
             link = "https://leetcode.com/problems/reverse-words-in-a-string/description/",
             instructions = (

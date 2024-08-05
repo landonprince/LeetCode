@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class StrStr(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Implement strStr()",
+            name = "Implement strStr()",
             difficulty = "easy",
             link = "https://leetcode.com/problems/implement-strstr/description/",
             instructions = (

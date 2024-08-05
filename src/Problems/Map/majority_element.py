@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class MajorityElement(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Majority Element",
+            name = "Majority Element",
             difficulty = "easy",
             link = "https://leetcode.com/problems/majority-element/description/",
             instructions = (

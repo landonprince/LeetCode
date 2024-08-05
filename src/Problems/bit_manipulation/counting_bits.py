@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class CountingBits(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Counting Bits",
+            name = "Counting Bits",
             difficulty = "easy",
             link = "https://leetcode.com/problems/counting-bits/description/",
             instructions = (

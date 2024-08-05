@@ -4,7 +4,7 @@ from problems.abstract_problem import AbstractProblem
 class RemoveDuplicatesFromSortedArray(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Remove Duplicates from Sorted Array",
+            name = "Remove Duplicates from Sorted Array",
             difficulty = "easy",
             link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/",
             instructions = (

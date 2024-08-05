@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class LengthOfLastWord(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Length of Last Word",
+            name = "Length of Last Word",
             difficulty = "easy",
             link = "https://leetcode.com/problems/length-of-last-word/description/",
             instructions = (

@@ -5,7 +5,7 @@ class MergeSortedArray(AbstractProblem):
     
     def __init__(self):
         super().__init__(
-            problem = "Merge Sorted Array",
+            name = "Merge Sorted Array",
             difficulty = "easy",
             link = "https://leetcode.com/problems/merge-sorted-array/description/",
             instructions = (

@@ -3,7 +3,7 @@ from problems.abstract_problem import AbstractProblem
 class FirstBadVersion(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "First Bad Version",
+            name = "First Bad Version",
             difficulty = "easy",
             link = "https://leetcode.com/problems/first-bad-version/description/",
             instructions = (

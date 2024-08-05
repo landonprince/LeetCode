@@ -11,7 +11,7 @@ class TreeNode:
 class CheckTree(AbstractProblem):
     def __init__(self):
         super().__init__(
-            problem = "Root Equals Sum of Children",
+            name = "Root Equals Sum of Children",
             difficulty = "easy",
             link = "https://leetcode.com/problems/root-equals-sum-of-children/description/",
             instructions = (
