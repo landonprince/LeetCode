@@ -1,11 +1,10 @@
 import importlib
 import pkgutil
 import os
-from collections import Counter
 from rich.console import Console
 from rich.table import Table
 from problems.abstract_problem import AbstractProblem
-from typing import List
+from typing import List, Dict
 
 def import_submodules(package_name: str):
     # Import the package using its name to get the package object
@@ -30,8 +29,9 @@ def import_submodules(package_name: str):
 import_submodules('problems')
 
 class ProblemCollection:
-    def __init__(self):
+    def __init__(self, console: Console):
         self.problem_list = self.collect_problems()
+        self.console = console
 
     def collect_problems(self) -> List[AbstractProblem]:
         # Discover all subclasses of AbstractProblem
@@ -39,50 +39,23 @@ class ProblemCollection:
 
         # Create instances of each subclass and store them in problem_list
         return [cls() for cls in problem_classes]
-
-    def print_difficulty_count(self):
-        print("\nEasy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "Easy"))     
-        print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "Medium")) 
-        print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "hard")) 
-        print()
-
-    def display_tag_frequency(self):
-        # Use a Counter to count the frequency of each tag
-        tag_counter = Counter()
-        for problem in self.problem_list:
-            tag_counter.update(problem.tags)
-
-        # Sort tags by frequency (descending)
-        sorted_tags = sorted(tag_counter.items(), key=lambda item: item[1])
-
-        # Create a Rich console and table
-        console = Console()
-        table = Table(title="Tag Frequency")
-
-        # Add columns to the table
-        table.add_column("Problem Tag", justify="left", no_wrap=True)
-        table.add_column("#", justify="right", style="magenta")
-
-        # Add rows to the table
-        for tag, frequency in sorted_tags:
-            table.add_row(tag, str(frequency))
-
-        # Print the table to the console
-        console.print()
-        console.print(table)
-        console.print()
-
-    def display_all_problems(self):
-        console = Console()
-        table = Table(title="Problem List")
+    def display_problems(self):
+        # Create a rich table with horizontal lines
+        table = Table(title="Problem List", show_lines=True)
 
         # Define table columns
         table.add_column("#", justify="right", style="cyan", no_wrap=True)
         table.add_column("Level")
         table.add_column("Problem Name")
 
+        # Define a sorting key to order problems by difficulty
+        difficulty_order = {"easy": 0, "medium": 1, "hard": 2}
+
+        # Sort the problem list by difficulty using the defined order
+        sorted_problems = sorted(self.problem_list, key=lambda problem: difficulty_order[problem.difficulty.lower()])
+
         # Add rows to the table
-        for index, problem in enumerate(self.problem_list, start=1):
+        for index, problem in enumerate(sorted_problems, start=1):
             # Change the color of the difficulty based on its value
             difficulty_color = "green" if problem.difficulty.lower() == "easy" else \
                             "yellow" if problem.difficulty.lower() == "medium" else \
@@ -95,9 +68,55 @@ class ProblemCollection:
                 f"{problem.name}"
             )
         # Print the table
-        console.print()
-        console.print(table) 
-        console.print()
+        self.console.print()
+        self.console.print(table)
+        self.console.print()
+    
+    def display_tags(self):
+        # Dictionary to store tags and associated problem names
+        tag_to_problems: Dict[str, List[str]] = {}
+
+        # Populate the dictionary
+        for problem in self.problem_list:
+            for tag in problem.tags:
+                if tag not in tag_to_problems:
+                    tag_to_problems[tag] = []
+                tag_to_problems[tag].append(problem.name)
+
+        # Calculate the total number of unique tags and problems
+        total_tags = len(tag_to_problems)
+        total_problems = len(self.problem_list)
+
+        # Sort tags by the number of associated problems (ascending order)
+        sorted_tags = sorted(tag_to_problems.items(), key=lambda item: len(item[1]))
+
+        # Create a rich table
+        table = Table(
+            title="Tag List",
+            show_lines=True
+        )
+
+        # Add columns to the table with total counts
+        table.add_column(f"Tag ({total_tags})", justify="left", style="cyan", no_wrap=True)
+        table.add_column(f"Problems ({total_problems})", justify="left", style="cyan")
+
+        # Define styles for alternating problem name colors
+        problem_styles = ["white", "grey50"]  # Alternating between white and lighter gray
+
+        # Add rows to the table
+        for tag, problems in sorted_tags:
+            # Alternate the color of problem names
+            colored_problem_list = [
+                f"[{problem_styles[i % len(problem_styles)]}]{problem}[/{problem_styles[i % len(problem_styles)]}]"
+                for i, problem in enumerate(problems)
+            ]
+            problem_list = ", ".join(colored_problem_list)
+            table.add_row(f"{tag} ({len(problems)})", problem_list)
+
+        # Print the table
+        self.console.print()
+        self.console.print(table)
+        self.console.print()
 
     def test_all_problems(self):
         for problem in self.problem_list:
