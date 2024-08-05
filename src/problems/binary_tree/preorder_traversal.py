@@ -17,7 +17,7 @@ class PreorderTraversal(AbstractProblem):
             instructions = (
                 "Given the root of a binary tree, return the preorder traversal of its nodes' values.",
             ),
-            tags = ["Binary Tree, Recursion"]
+            tags = ["Binary Tree", "Recursion"]
         )
 
     def solution(self, root: Optional[TreeNode]) -> List[int]:

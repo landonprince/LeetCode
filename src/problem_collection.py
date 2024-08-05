@@ -1,6 +1,9 @@
 import importlib
 import pkgutil
 import os
+from collections import Counter
+from rich.console import Console
+from rich.table import Table
 from problems.abstract_problem import AbstractProblem
 from typing import List
 
@@ -43,10 +46,56 @@ class ProblemCollection:
         print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "hard")) 
         print()
 
+    def display_tag_frequency(self):
+        # Use a Counter to count the frequency of each tag
+        tag_counter = Counter()
+        for problem in self.problem_list:
+            tag_counter.update(problem.tags)
+
+        # Sort tags by frequency (descending)
+        sorted_tags = sorted(tag_counter.items(), key=lambda item: item[1])
+
+        # Create a Rich console and table
+        console = Console()
+        table = Table(title="Tag Frequency")
+
+        # Add columns to the table
+        table.add_column("Problem Tag", justify="left", style="cyan", no_wrap=True)
+        table.add_column("#", justify="right", style="magenta")
+
+        # Add rows to the table
+        for tag, frequency in sorted_tags:
+            table.add_row(tag, str(frequency))
+
+        # Print the table to the console
+        console.print(table)
+
     def display_all_problems(self):
-        # Iterate over problem_list with an index starting from 1
+        console = Console()
+        console.print()
+        table = Table(title="Problem List")
+
+        # Define table columns
+        table.add_column("#", justify="right", style="cyan", no_wrap=True)
+        table.add_column("Level")
+        table.add_column("Problem Name")
+
+        # Add rows to the table
         for index, problem in enumerate(self.problem_list, start=1):
-            print(f"{index} ...... {problem.name}") 
+            # Change the color of the difficulty based on its value
+            difficulty_color = "green" if problem.difficulty.lower() == "easy" else \
+                            "yellow" if problem.difficulty.lower() == "medium" else \
+                            "red"
+
+            # Add a row to the table with colored difficulty
+            table.add_row(
+                str(index),
+                f"[{difficulty_color}]{problem.difficulty}[/{difficulty_color}]",
+                f"{problem.name}"
+            )
+        # Print the table
+        console.print(table) 
+        console.print()
 
     def test_all_problems(self):
         for problem in self.problem_list:

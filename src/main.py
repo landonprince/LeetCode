@@ -32,6 +32,8 @@ def main():
             problem_collection.print_difficulty_count()
         elif command == "help":
             print_help()
+        elif command == "tags":
+            problem_collection.display_tag_frequency()
         elif command == "quit":
             print("Exiting the program. Goodbye!")
             break

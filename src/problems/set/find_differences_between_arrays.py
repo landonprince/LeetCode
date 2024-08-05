@@ -13,7 +13,7 @@ class FindDifferenceBetweenArrays(AbstractProblem):
                 "answer[1] is a list of all distinct integers in nums2 which are not present in nums1.\n"
                 "Note that the integers in the lists may be returned in any order."
             ),
-            tags = ["Array, Set"]
+            tags = ["Array", "Set"]
         )
 
     def solution(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:

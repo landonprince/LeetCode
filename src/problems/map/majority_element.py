@@ -12,7 +12,7 @@ class MajorityElement(AbstractProblem):
                 "The majority element is the element that appears more than ⌊n / 2⌋ times.\n"
                 "You may assume that the majority element always exists in the array."
             ),
-            tags = ["Array, Map"]
+            tags = ["Array", "Map"]
         )
 
     def solution(self, nums: List[int]) -> int:

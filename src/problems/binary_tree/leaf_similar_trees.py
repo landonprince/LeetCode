@@ -20,7 +20,7 @@ class LeafSimilarTrees(AbstractProblem):
                 "Two binary trees are considered leaf-similar if their leaf value sequence is the same.\n"
                 "Return true if and only if the two given trees with root nodes root1 and root2 are leaf-similar."
             ),
-            tags = ["Binary Tree, Recursion"]
+            tags = ["Binary Tree", "Recursion"]
         )
 
     def solution(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
