@@ -1,8 +1,8 @@
-import importlib.util 
-import pkgutil 
-import os  
-from problems.abstract_problem import AbstractProblem 
-from typing import List  
+import importlib
+import pkgutil
+import os
+from problems.abstract_problem import AbstractProblem
+from typing import List, Tuple
 
 def import_submodules(package_name: str):
     # Import the package using its name to get the package object
@@ -28,35 +28,28 @@ import_submodules('problems')
 
 class ProblemCollection:
     def __init__(self):
-        # Create the main problem list where each problem is a list of [name, difficulty, tags]
         self.problem_list = self.collect_problems()
-            
-    def collect_problems(self) -> List[List]:
+
+    def collect_problems(self) -> List[AbstractProblem]:
         # Discover all subclasses of AbstractProblem
         problem_classes = AbstractProblem.__subclasses__()
-        
-        # Create a list for each problem with name, difficulty, and tags
-        problem_data = [
-            [cls().name, cls().difficulty, cls().tags]
-            for cls in problem_classes
-        ]
-        return problem_data
 
-    def count_by_difficulty(self, difficulty: str) -> int:
-        # Count and return the number of problems matching the specified difficulty
-        return sum(1 for problem in self.problem_list if problem[1] == difficulty)
+        # Create instances of each subclass and store them in problem_list
+        return [cls() for cls in problem_classes]
+
+    def print_difficulty_count(self):
+        print("\nEasy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "easy"))     
+        print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "medium")) 
+        print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "hard")) 
+        print()
 
     def display_all_problems(self):
-        # Print details for each problem in the problem list
         for problem in self.problem_list:
-            print(f"\nProblem Name: {problem[0]}\nDifficulty: {problem[1]}\nTags: {problem[2]}")
+            print(f"\n{problem}")
         print()
 
     def test_all_problems(self):
-        # Test each problem by calling its test method and print the results
-        problem_classes = AbstractProblem.__subclasses__()
-        for cls in problem_classes:
-            problem = cls()
+        for problem in self.problem_list:
             print(f"\nTesting Problem: {problem.link}")
             problem.test()
         print()

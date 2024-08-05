@@ -9,3 +9,5 @@ sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 if __name__ == "__main__":
     problem_collection = ProblemCollection()
     problem_collection.display_all_problems()
+    problem_collection.test_all_problems()
+    problem_collection.print_difficulty_count()
