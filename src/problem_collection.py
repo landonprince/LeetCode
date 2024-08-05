@@ -60,7 +60,7 @@ class ProblemCollection:
         table = Table(title="Tag Frequency")
 
         # Add columns to the table
-        table.add_column("Problem Tag", justify="left", style="cyan", no_wrap=True)
+        table.add_column("Problem Tag", justify="left", no_wrap=True)
         table.add_column("#", justify="right", style="magenta")
 
         # Add rows to the table
@@ -68,11 +68,12 @@ class ProblemCollection:
             table.add_row(tag, str(frequency))
 
         # Print the table to the console
+        console.print()
         console.print(table)
+        console.print()
 
     def display_all_problems(self):
         console = Console()
-        console.print()
         table = Table(title="Problem List")
 
         # Define table columns
@@ -94,6 +95,7 @@ class ProblemCollection:
                 f"{problem.name}"
             )
         # Print the table
+        console.print()
         console.print(table) 
         console.print()
 
