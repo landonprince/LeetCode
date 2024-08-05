@@ -45,7 +45,7 @@ class ProblemCollection:
 
     def display_all_problems(self):
         for problem in self.problem_list:
-            print(f"\n{problem}")
+            print(f"\n{problem.name}")
         print()
 
     def test_all_problems(self):
