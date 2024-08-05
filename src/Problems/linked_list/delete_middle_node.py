@@ -11,7 +11,7 @@ class DeleteMiddleNode(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Delete the Middle Node of a Linked List",
-            difficulty = "medium",
+            difficulty = "Medium",
             link = "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/",
             instructions = (
                 "You are given the head of a linked list. Delete the middle node, "
@@ -42,7 +42,7 @@ class DeleteMiddleNode(AbstractProblem):
         return head
 
     def test(self):
-        # Helper function to convert linked list to Python list for easy comparison
+        # Helper function to convert linked list to Python list for Easy comparison
         def list_to_array(head: Optional[ListNode]) -> list[int]:
             array = []
             current = head

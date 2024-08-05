@@ -6,7 +6,7 @@ class MergeSortedArray(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Merge Sorted Array",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/merge-sorted-array/description/",
             instructions = (
                 "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, "

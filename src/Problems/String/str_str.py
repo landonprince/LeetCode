@@ -4,7 +4,7 @@ class StrStr(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Find the Index of the First Occurrence in a String",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/implement-strstr/description/",
             instructions = (
                 "Implement strStr().\n"

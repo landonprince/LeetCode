@@ -5,7 +5,7 @@ class UniqueOccurrences(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Unique Number of Occurrences",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/unique-number-of-occurrences/description/",
             instructions = (
                 "Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique."

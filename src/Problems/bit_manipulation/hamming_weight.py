@@ -4,7 +4,7 @@ class HammingWeight(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Hamming Weight",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/number-of-1-bits/description/",
             instructions = (
                 "Write a function that takes an unsigned integer and returns the number of '1' bits it has "

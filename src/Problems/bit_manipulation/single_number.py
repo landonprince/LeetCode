@@ -5,7 +5,7 @@ class SingleNumber(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Single Number",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/single-number/description/",
             instructions = (
                 "Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.\n"

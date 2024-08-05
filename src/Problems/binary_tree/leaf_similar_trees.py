@@ -12,7 +12,7 @@ class LeafSimilarTrees(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Leaf-Similar Trees",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/leaf-similar-trees/description/",
             instructions = (
                 "Consider all the leaves of a binary tree, from left to right order, the values of those leaves "

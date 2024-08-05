@@ -2,7 +2,7 @@ import importlib
 import pkgutil
 import os
 from problems.abstract_problem import AbstractProblem
-from typing import List, Tuple
+from typing import List
 
 def import_submodules(package_name: str):
     # Import the package using its name to get the package object
@@ -38,15 +38,15 @@ class ProblemCollection:
         return [cls() for cls in problem_classes]
 
     def print_difficulty_count(self):
-        print("\nEasy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "easy"))     
-        print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "medium")) 
+        print("\nEasy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "Easy"))     
+        print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "Medium")) 
         print("Easy Problems: ", sum(1 for problem in self.problem_list if problem.difficulty == "hard")) 
         print()
 
     def display_all_problems(self):
-        for problem in self.problem_list:
-            print(f"\n{problem.name}")
-        print()
+        # Iterate over problem_list with an index starting from 1
+        for index, problem in enumerate(self.problem_list, start=1):
+            print(f"{index} ...... {problem.name}") 
 
     def test_all_problems(self):
         for problem in self.problem_list:

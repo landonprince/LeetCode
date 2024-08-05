@@ -4,7 +4,7 @@ class LengthOfLastWord(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Length of Last Word",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/length-of-last-word/description/",
             instructions = (
                 "Given a string s consisting of words and spaces, return the length of the last word in the string.\n"

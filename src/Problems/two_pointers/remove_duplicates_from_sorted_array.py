@@ -5,7 +5,7 @@ class RemoveDuplicatesFromSortedArray(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Remove Duplicates from Sorted Array",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/",
             instructions = (
                 "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each "

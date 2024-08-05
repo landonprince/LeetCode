@@ -4,7 +4,7 @@ class KthFactor(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "The Kth Factor of N",
-            difficulty = "medium",
+            difficulty = "Medium",
             link = "https://leetcode.com/problems/the-kth-factor-of-n/description/",
             instructions = (
                 "Given two positive integers n and k, return the kth factor of n."

@@ -5,7 +5,7 @@ class FindDifferenceBetweenArrays(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Find the Difference Between Two Arrays",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/find-the-difference-of-two-arrays/description/",
             instructions = (
                 "Given two integer arrays nums1 and nums2, return a list answer of size 2 where:\n"

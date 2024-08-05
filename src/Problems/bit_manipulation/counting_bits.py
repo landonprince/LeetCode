@@ -5,7 +5,7 @@ class CountingBits(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Counting Bits",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/counting-bits/description/",
             instructions = (
                 "Given an integer n, return an array ans of length n + 1 such that "

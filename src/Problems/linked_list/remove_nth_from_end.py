@@ -11,7 +11,7 @@ class RemoveNthFromEnd(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Remove Nth Node From End of List",
-            difficulty = "medium",
+            difficulty = "Medium",
             link = "https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/",
             instructions = (
                 "Given the head of a linked list, remove the nth node from the end of the list and return its head.\n"

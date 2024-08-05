@@ -12,7 +12,7 @@ class PostorderTraversal(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Binary Tree Postorder Traversal",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/binary-tree-postorder-traversal/description/",
             instructions = (
                 "Given the root of a binary tree, return the postorder traversal of its nodes' values."

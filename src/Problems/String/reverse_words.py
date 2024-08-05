@@ -4,7 +4,7 @@ class ReverseWords(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Reverse Words in a String",
-            difficulty = "medium",
+            difficulty = "Medium",
             link = "https://leetcode.com/problems/reverse-words-in-a-string/description/",
             instructions = (
                 "Given an input string s, reverse the order of the words.\n"

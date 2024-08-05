@@ -12,7 +12,7 @@ class DeleteNodeInBST(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Delete Node in a BST",
-            difficulty = "medium",
+            difficulty = "Medium",
             link = "https://leetcode.com/problems/delete-node-in-a-bst/description/",
             instructions = (
                 "Given a root node reference of a BST and a key, delete the node with the given key in the BST. "

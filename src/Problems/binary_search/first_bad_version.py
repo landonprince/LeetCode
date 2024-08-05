@@ -4,7 +4,7 @@ class FirstBadVersion(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "First Bad Version",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/first-bad-version/description/",
             instructions = (
                 "You are a product manager and currently leading a team to develop a new product. "

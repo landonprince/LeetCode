@@ -4,7 +4,7 @@ class ValidParentheses(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Valid Parentheses",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/valid-parentheses/description/",
             instructions = (
                 "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', "

@@ -4,7 +4,7 @@ class GuessNumberHigherOrLower(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Guess Number Higher or Lower",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/guess-number-higher-or-lower/description/",
             instructions = (
                 "We are playing the Guess Game. The game is as follows:\n"

@@ -11,7 +11,7 @@ class MergeTwoSortedLists(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Merge Two Sorted Lists",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/merge-two-sorted-lists/description/",
             instructions = (
                 "Merge two sorted linked lists and return it as a sorted list. "

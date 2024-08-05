@@ -4,7 +4,7 @@ class ReverseVowels(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Reverse Vowels of a String",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/reverse-vowels-of-a-string/description/",
             instructions = (
                 "Given a string s, reverse only all the vowels in the string and return it.\n"

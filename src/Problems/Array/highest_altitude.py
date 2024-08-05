@@ -5,7 +5,7 @@ class HighestAltitude(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Find the Highest Altitude",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/find-the-highest-altitude/description/",
             instructions = (
                 "There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. "

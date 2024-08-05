@@ -5,7 +5,7 @@ class MoveZeroes(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Move Zeroes",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/move-zeroes/description/",
             instructions = (
                 "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the "

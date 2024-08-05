@@ -12,7 +12,7 @@ class CheckTree(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Root Equals Sum of Children",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/root-equals-sum-of-children/description/",
             instructions = (
                 "You are given the root node of a binary tree with exactly 3 nodes: the root, its left child, and its right child.\n"

@@ -5,7 +5,7 @@ class MajorityElement(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Majority Element",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/majority-element/description/",
             instructions = (
                 "Given an array nums of size n, return the majority element.\n"

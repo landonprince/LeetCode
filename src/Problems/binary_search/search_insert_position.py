@@ -5,7 +5,7 @@ class SearchInsertPosition(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Search Insert Position",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/search-insert-position/description/",
             instructions = (
                 "Given a sorted array of distinct integers and a target value, return the index if the target is found.\n"

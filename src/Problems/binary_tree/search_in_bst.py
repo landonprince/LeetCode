@@ -12,7 +12,7 @@ class SearchInBST(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Search in a Binary Search Tree",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/search-in-a-binary-search-tree/description/",
             instructions = (
                 "You are given the root of a binary search tree (BST) and an integer val.\n"

@@ -12,7 +12,7 @@ class PreorderTraversal(AbstractProblem):
     def __init__(self):
         super().__init__(
             name = "Binary Tree Preorder Traversal",
-            difficulty = "easy",
+            difficulty = "Easy",
             link = "https://leetcode.com/problems/binary-tree-preorder-traversal/description/",
             instructions = (
                 "Given the root of a binary tree, return the preorder traversal of its nodes' values.",
