@@ -59,38 +59,35 @@ class DeleteNodeInBST(AbstractProblem):
         return current
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Helper function to print the in-order traversal of the tree
         def inorder_traversal(root: Optional[TreeNode]) -> list[int]:
             return inorder_traversal(root.left) + [root.val] + inorder_traversal(root.right) if root else []
 
         # Test cases
-        test_case_1 = TreeNode(5)
-        test_case_1.left = TreeNode(3)
-        test_case_1.right = TreeNode(6)
-        test_case_1.left.left = TreeNode(2)
-        test_case_1.left.right = TreeNode(4)
-        test_case_1.right.right = TreeNode(7)
+        test_cases = [
+            (TreeNode(5,
+                left=TreeNode(3, TreeNode(2), TreeNode(4)),
+                right=TreeNode(6, None, TreeNode(7))
+            ), 3, [2, 4, 5, 6, 7]),  # Test case 1
 
-        # Perform test and verify output
-        expected_result_1 = [2, 4, 5, 6, 7]
-        modified_root_1 = self.solution(test_case_1, 3)
-        result_1 = inorder_traversal(modified_root_1)
-        assert result_1 == expected_result_1, f"Test failed: expected {expected_result_1}, got {result_1}"
-        print(f"Test passed: {result_1}")
+            (TreeNode(5,
+                left=TreeNode(3, TreeNode(2), TreeNode(4)),
+                right=TreeNode(6, None, TreeNode(7))
+            ), 7, [2, 3, 4, 5, 6]),  # Test case 2
+        ]
 
-        test_case_2 = TreeNode(5)
-        test_case_2.left = TreeNode(3)
-        test_case_2.right = TreeNode(6)
-        test_case_2.left.left = TreeNode(2)
-        test_case_2.left.right = TreeNode(4)
-        test_case_2.right.right = TreeNode(7)
+        # Run each test case
+        for i, (root, delete_value, expected_result) in enumerate(test_cases, start=1):
+            self.total_tests += 1
+            modified_root = self.solution(root, delete_value)
+            result = inorder_traversal(modified_root)
+            if result == expected_result:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i}: {result}")
+            else:
+                print(f"Test failed for test case {i}: expected {expected_result}, got {result}")
 
-        # Perform test and verify output
-        expected_result_2 = [2, 3, 4, 5, 6]
-        modified_root_2 = self.solution(test_case_2, 7)
-        result_2 = inorder_traversal(modified_root_2)
-        assert result_2 == expected_result_2, f"Test failed: expected {expected_result_2}, got {result_2}"
-        print(f"Test passed: {result_2}")
-
-    def __str__(self):
-        return super().__str__()

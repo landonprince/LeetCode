@@ -34,6 +34,10 @@ class MaxDepthBinaryTree(AbstractProblem):
         return max(left_depth, right_depth) + 1
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Construct a binary tree for testing
         root1 = TreeNode(1)
         root1.left = TreeNode(2)
@@ -41,26 +45,39 @@ class MaxDepthBinaryTree(AbstractProblem):
         root1.right.right = TreeNode(4)
 
         # Test case 1
+        self.total_tests += 1
         expected_result = 3
         result = self.solution(root1)
-        assert result == expected_result, f"Test failed: expected {expected_result}, got {result}"
-        print(f"Test passed for test case 1: {result}")
+        if result == expected_result:
+            self.tests_passed += 1
+            print(f"Test passed for test case 1: {result}")
+        else:
+            print(f"Test failed for test case 1: expected {expected_result}, got {result}")
 
         # Test case 2: Single node
+        self.total_tests += 1
         root2 = TreeNode(1)
         expected_result = 1
         result = self.solution(root2)
-        assert result == expected_result, f"Test failed: expected {expected_result}, got {result}"
-        print(f"Test passed for test case 2: {result}")
+        if result == expected_result:
+            self.tests_passed += 1
+            print(f"Test passed for test case 2: {result}")
+        else:
+            print(f"Test failed for test case 2: expected {expected_result}, got {result}")
 
         # Test case 3: Empty tree
+        self.total_tests += 1
         root3 = None
         expected_result = 0
         result = self.solution(root3)
-        assert result == expected_result, f"Test failed: expected {expected_result}, got {result}"
-        print(f"Test passed for test case 3: {result}")
+        if result == expected_result:
+            self.tests_passed += 1
+            print(f"Test passed for test case 3: {result}")
+        else:
+            print(f"Test failed for test case 3: expected {expected_result}, got {result}")
 
         # Test case 4: More complex tree
+        self.total_tests += 1
         root4 = TreeNode(3)
         root4.left = TreeNode(9)
         root4.right = TreeNode(20)
@@ -68,10 +85,11 @@ class MaxDepthBinaryTree(AbstractProblem):
         root4.right.right = TreeNode(7)
         expected_result = 3
         result = self.solution(root4)
-        assert result == expected_result, f"Test failed: expected {expected_result}, got {result}"
-        print(f"Test passed for test case 4: {result}")
+        if result == expected_result:
+            self.tests_passed += 1
+            print(f"Test passed for test case 4: {result}")
+        else:
+            print(f"Test failed for test case 4: expected {expected_result}, got {result}")
 
-    def __str__(self):
-        return super().__str__()
 
     

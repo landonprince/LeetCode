@@ -35,6 +35,10 @@ class TwoSum(AbstractProblem):
         return []
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+        
         # Test cases
         test_cases = [
             ([2, 7, 11, 15], 9, [0, 1]),
@@ -43,10 +47,6 @@ class TwoSum(AbstractProblem):
             ([1, 5, 7, 9], 14, [1, 3]),
             ([1, 2, 3, 4, 5], 9, [3, 4])
         ]
-
-        # Reset test counters
-        self.tests_passed = 0
-        self.total_tests = 0
 
         # Run each test case
         for nums, target, expected in test_cases:

@@ -45,7 +45,12 @@ class LeafSimilarTrees(AbstractProblem):
         return leaves1 == leaves2
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test case 1
+        self.total_tests += 1
         root1 = TreeNode(1)
         root1.left = TreeNode(2)
         root1.right = TreeNode(3)
@@ -54,9 +59,14 @@ class LeafSimilarTrees(AbstractProblem):
         root2.left = TreeNode(2)
         root2.right = TreeNode(3)
 
-        assert self.solution(root1, root2) == True, "Test failed for test case 1"
+        if self.solution(root1, root2) == True:
+            self.tests_passed += 1
+            print("Test case 1 passed")
+        else:
+            print("Test case 1 failed")
 
         # Test case 2
+        self.total_tests += 1
         root1 = TreeNode(3)
         root1.left = TreeNode(5)
         root1.right = TreeNode(1)
@@ -77,9 +87,14 @@ class LeafSimilarTrees(AbstractProblem):
         root2.right.right.left = TreeNode(9)
         root2.right.right.right = TreeNode(8)
 
-        assert self.solution(root1, root2) == True, "Test failed for test case 2"
+        if self.solution(root1, root2) == True:
+            self.tests_passed += 1
+            print("Test case 2 passed")
+        else:
+            print("Test case 2 failed")
 
         # Test case 3
+        self.total_tests += 1
         root1 = TreeNode(1)
         root1.left = TreeNode(2)
         root1.right = TreeNode(3)
@@ -90,11 +105,11 @@ class LeafSimilarTrees(AbstractProblem):
         root2.right = TreeNode(3)
         root2.right.right = TreeNode(4)
 
-        assert self.solution(root1, root2) == False, "Test failed for test case 3"
+        if self.solution(root1, root2) == False:
+            self.tests_passed += 1
+            print("Test case 3 passed")
+        else:
+            print("Test case 3 failed")
 
-        print("All tests passed!")
-
-    def __str__(self):
-        return super().__str__()
 
 

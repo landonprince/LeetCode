@@ -30,6 +30,10 @@ class MoveZeroes(AbstractProblem):
             nums[i] = 0
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ([0, 1, 0, 3, 12], [1, 3, 12, 0, 0]),
@@ -39,11 +43,14 @@ class MoveZeroes(AbstractProblem):
             ([2, 1], [2, 1])
         ]
 
-        for nums, expected in test_cases:
+        # Run each test case
+        for i, (nums, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             nums_copy = nums[:]
             self.solution(nums_copy)
-            assert nums_copy == expected, f"Test failed: expected {expected}, got {nums_copy}"
-            print(f"Test passed for nums = {nums}: {nums_copy}")
+            if nums_copy == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with nums = {nums}: {nums_copy}")
+            else:
+                print(f"Test failed for test case {i} with nums = {nums}: expected {expected}, got {nums_copy}")
 
-    def __str__(self):
-        return super().__str__()

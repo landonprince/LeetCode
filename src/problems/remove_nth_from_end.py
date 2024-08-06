@@ -47,16 +47,20 @@ class RemoveNthFromEnd(AbstractProblem):
         return head
     
     def test(self):
-        # Helper function to print the list
-        def print_list(node: Optional[ListNode]) -> list:
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
+        # Helper function to convert the list to a Python list
+        def list_to_array(node: Optional[ListNode]) -> list:
             result = []
             while node:
                 result.append(node.val)
                 node = node.next
             return result
 
-        # Test cases
         # Test case 1
+        self.total_tests += 1
         head = ListNode(1)
         head.next = ListNode(2)
         head.next.next = ListNode(3)
@@ -65,28 +69,37 @@ class RemoveNthFromEnd(AbstractProblem):
 
         n = 2
         expected = [1, 2, 3, 5]
-        result = print_list(self.solution(head, n))
-        assert result == expected, f"Test failed: expected {expected}, got {result}"
-        print(f"Test passed for test case 1: {result}")
+        result = list_to_array(self.solution(head, n))
+        if result == expected:
+            self.tests_passed += 1
+            print(f"Test passed for test case 1: {result}")
+        else:
+            print(f"Test failed for test case 1: expected {expected}, got {result}")
 
         # Test case 2: Remove the head node
+        self.total_tests += 1
         head = ListNode(1)
         head.next = ListNode(2)
 
         n = 2
         expected = [2]
-        result = print_list(self.solution(head, n))
-        assert result == expected, f"Test failed: expected {expected}, got {result}"
-        print(f"Test passed for test case 2: {result}")
+        result = list_to_array(self.solution(head, n))
+        if result == expected:
+            self.tests_passed += 1
+            print(f"Test passed for test case 2: {result}")
+        else:
+            print(f"Test failed for test case 2: expected {expected}, got {result}")
 
         # Test case 3: Single element list
+        self.total_tests += 1
         head = ListNode(1)
 
         n = 1
         expected = []
-        result = print_list(self.solution(head, n))
-        assert result == expected, f"Test failed: expected {expected}, got {result}"
-        print(f"Test passed for test case 3: {result}")
+        result = list_to_array(self.solution(head, n))
+        if result == expected:
+            self.tests_passed += 1
+            print(f"Test passed for test case 3: {result}")
+        else:
+            print(f"Test failed for test case 3: expected {expected}, got {result}")
 
-    def __str__(self):
-        return super().__str__()

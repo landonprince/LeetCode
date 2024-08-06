@@ -73,5 +73,3 @@ class SearchInBST(AbstractProblem):
         assert result_values == expected, f"Test failed: expected {expected}, got {result_values}"
         print(f"Test passed for value {val3}: {result_values}")
 
-    def __str__(self):
-        return super().__str__()

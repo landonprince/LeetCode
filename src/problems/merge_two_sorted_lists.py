@@ -46,16 +46,20 @@ class MergeTwoSortedLists(AbstractProblem):
         return dummy.next
 
     def test(self):
-        # Helper function to print the list
-        def print_list(node: Optional[ListNode]):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
+        # Helper function to convert the list to a Python list
+        def list_to_array(node: Optional[ListNode]):
             result = []
             while node:
                 result.append(node.val)
                 node = node.next
             return result
 
-        # Test cases
         # Test case 1
+        self.total_tests += 1
         list1 = ListNode(1)
         list1.next = ListNode(2)
         list1.next.next = ListNode(4)
@@ -65,27 +69,35 @@ class MergeTwoSortedLists(AbstractProblem):
         list2.next.next = ListNode(4)
 
         expected = [1, 1, 2, 3, 4, 4]
-        result = print_list(self.solution(list1, list2))
-        assert result == expected, f"Test failed: expected {expected}, got {result}"
-        print(f"Test passed for test case 1: {result}")
+        result = list_to_array(self.solution(list1, list2))
+        if result == expected:
+            self.tests_passed += 1
+            print(f"Test passed for test case 1: {result}")
+        else:
+            print(f"Test failed for test case 1: expected {expected}, got {result}")
 
         # Test case 2: One list is empty
+        self.total_tests += 1
         list1 = None
         list2 = ListNode(0)
 
         expected = [0]
-        result = print_list(self.solution(list1, list2))
-        assert result == expected, f"Test failed: expected {expected}, got {result}"
-        print(f"Test passed for test case 2: {result}")
+        result = list_to_array(self.solution(list1, list2))
+        if result == expected:
+            self.tests_passed += 1
+            print(f"Test passed for test case 2: {result}")
+        else:
+            print(f"Test failed for test case 2: expected {expected}, got {result}")
 
         # Test case 3: Both lists are empty
+        self.total_tests += 1
         list1 = None
         list2 = None
 
         expected = []
-        result = print_list(self.solution(list1, list2))
-        assert result == expected, f"Test failed: expected {expected}, got {result}"
-        print(f"Test passed for test case 3: {result}")
-
-    def __str__(self):
-        return super().__str__()
+        result = list_to_array(self.solution(list1, list2))
+        if result == expected:
+            self.tests_passed += 1
+            print(f"Test passed for test case 3: {result}")
+        else:
+            print(f"Test failed for test case 3: expected {expected}, got {result}")

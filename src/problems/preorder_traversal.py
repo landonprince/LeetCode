@@ -34,6 +34,10 @@ class PreorderTraversal(AbstractProblem):
         self.traverse(root.right, result)  # Traverse right subtree
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Construct the binary tree
         root = TreeNode(1)
         root.left = TreeNode(2)
@@ -43,11 +47,13 @@ class PreorderTraversal(AbstractProblem):
         root.right.left = TreeNode(6)
         root.right.right = TreeNode(7)
 
-        # Expected preorder traversal: [1, 2, 4, 5, 3, 6, 7]
-        expected_result = [1, 2, 4, 5, 3, 6, 7]
+        # Test case 1
+        self.total_tests += 1
+        expected_result = [1, 2, 4, 5, 3, 6, 7]  # Expected preorder traversal
         result = self.solution(root)
-        assert result == expected_result, f"Test failed: expected {expected_result}, got {result}"
-        print(f"Test passed: {result}")
+        if result == expected_result:
+            self.tests_passed += 1
+            print(f"Test passed for test case 1: {result}")
+        else:
+            print(f"Test failed for test case 1: expected {expected_result}, got {result}")
 
-    def __str__(self):
-        return super().__str__()

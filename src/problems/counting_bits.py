@@ -26,14 +26,24 @@ class CountingBits(AbstractProblem):
         return result
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
+        # Define test cases
         test_cases = [
             (2, [0, 1, 1]),
             (5, [0, 1, 1, 2, 1, 2]),
         ]
-        for n, expected in test_cases:
-            result = self.solution(n)
-            assert result == expected, f"Test failed for n = {n}: expected {expected}, got {result}"
-            print(f"Test passed for n = {n}: {result}")
 
-    def __str__(self):
-        return super().__str__()
+        # Run each test case
+        for n, expected in test_cases:
+            self.total_tests += 1
+            result = self.solution(n)
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for n = {n}: {result}")
+            else:
+                print(f"Test failed for n = {n}: expected {expected}, got {result}")
+
+

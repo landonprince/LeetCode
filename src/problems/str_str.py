@@ -22,6 +22,10 @@ class StrStr(AbstractProblem):
         return haystack.index(needle)
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ("hello world", "world", 6),
@@ -31,9 +35,14 @@ class StrStr(AbstractProblem):
             ("mississippi", "issip", 4)
         ]
 
-        for haystack, needle, expected in test_cases:
+        # Run each test case
+        for i, (haystack, needle, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             result = self.solution(haystack, needle)
-            assert result == expected, f"Test failed: expected {expected}, got {result}"
-            print(f"Test passed for haystack = '{haystack}', needle = '{needle}': {result}")
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with haystack = '{haystack}', needle = '{needle}': {result}")
+            else:
+                print(f"Test failed for test case {i} with haystack = '{haystack}', needle = '{needle}': expected {expected}, got {result}")
 
 

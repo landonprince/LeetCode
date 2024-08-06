@@ -35,6 +35,10 @@ class ValidParentheses(AbstractProblem):
         return len(stack) == 0
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ("()", True),
@@ -46,16 +50,13 @@ class ValidParentheses(AbstractProblem):
             ("[", False)  # Unmatched opening bracket
         ]
 
-        for s, expected in test_cases:
+        # Run each test case
+        for i, (s, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             result = self.solution(s)
-            assert result == expected, f"Test failed: expected {expected}, got {result}"
-            print(f"Test passed for s = '{s}': {result}")
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with s = '{s}': {result}")
+            else:
+                print(f"Test failed for test case {i} with s = '{s}': expected {expected}, got {result}")
 
-    def __str__(self):
-        return (
-            f"Problem: Valid Parentheses\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-    def __str__(self):
-            return super().__str__()

@@ -35,6 +35,10 @@ class RemoveDuplicatesFromSortedArray(AbstractProblem):
         return slow + 1
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ([1, 1, 2, 3, 4, 4, 5, 9, 9, 10], [1, 2, 3, 4, 5, 9, 10]),
@@ -44,11 +48,14 @@ class RemoveDuplicatesFromSortedArray(AbstractProblem):
             ([], []),
         ]
 
-        for nums, expected in test_cases:
+        # Run each test case
+        for i, (nums, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             nums_copy = nums[:]
             length = self.solution(nums_copy)
-            assert nums_copy[:length] == expected, f"Test failed: expected {expected}, got {nums_copy[:length]}"
-            print(f"Test passed for nums = {nums}: {nums_copy[:length]}")
+            if nums_copy[:length] == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with nums = {nums}: {nums_copy[:length]}")
+            else:
+                print(f"Test failed for test case {i} with nums = {nums}: expected {expected}, got {nums_copy[:length]}")
 
-    def __str__(self):
-        return super().__str__()

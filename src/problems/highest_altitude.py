@@ -29,6 +29,10 @@ class HighestAltitude(AbstractProblem):
         return max_altitude
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ([-5, 1, 5, 0, -7], 1),  # Correct: max altitude is 1
@@ -37,15 +41,18 @@ class HighestAltitude(AbstractProblem):
             ([1, 2, 3, 4, 5], 15),  # Correct: max altitude is 15
             ([-1, -2, -3, -4], 0),  # Correct: max altitude is 0
         ]
-        
-        for gain, expected in test_cases:
-            result = self.solution(gain)
-            assert result == expected, f"Test failed: expected {expected}, got {result}"
-            print(f"Test passed for gain = {gain}: {result}")
 
-    def __str__(self):
-        return super().__str__()
-            
+        # Run each test case
+        for i, (gain, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
+            result = self.solution(gain)
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with gain = {gain}: {result}")
+            else:
+                print(f"Test failed for test case {i} with gain = {gain}: expected {expected}, got {result}")
+
+                
         
 
 

@@ -28,37 +28,24 @@ class CheckTree(AbstractProblem):
         return root.val == root.left.val + root.right.val
 
     def test(self):
-        # Test case 1: root = 3, left = 2, right = 1, result = True
-        root1 = TreeNode(3)
-        root1.left = TreeNode(2)
-        root1.right = TreeNode(1)
-        result = self.solution(root1)
-        assert result == True, f"Test failed: expected True, got {result}"
-        print(f"Test passed for test case 1: result = {result}")
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
 
-        # Test case 2: root = 10, left = 5, right = 5, result = True
-        root2 = TreeNode(10)
-        root2.left = TreeNode(5)
-        root2.right = TreeNode(5)
-        result = self.solution(root2)
-        assert result == True, f"Test failed: expected True, got {result}"
-        print(f"Test passed for test case 2: result = {result}")
+        # Test cases
+        test_cases = [
+            (TreeNode(3, TreeNode(2), TreeNode(1)), True),  # Test case 1
+            (TreeNode(10, TreeNode(5), TreeNode(5)), True),  # Test case 2
+            (TreeNode(5, TreeNode(3), TreeNode(1)), False),  # Test case 3
+            (TreeNode(6, TreeNode(2), TreeNode(4)), True),   # Test case 4
+        ]
 
-        # Test case 3: root = 5, left = 3, right = 1, result = False
-        root3 = TreeNode(5)
-        root3.left = TreeNode(3)
-        root3.right = TreeNode(1)
-        result = self.solution(root3)
-        assert result == False, f"Test failed: expected False, got {result}"
-        print(f"Test passed for test case 3: result = {result}")
-
-        # Test case 4: root = 6, left = 2, right = 4, result = True
-        root4 = TreeNode(6)
-        root4.left = TreeNode(2)
-        root4.right = TreeNode(4)
-        result = self.solution(root4)
-        assert result == True, f"Test failed: expected True, got {result}"
-        print(f"Test passed for test case 4: result = {result}")
-
-    def __str__(self):
-        return super().__str__()
+        for i, (root, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
+            result = self.solution(root)
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i}: result = {result}")
+            else:
+                print(f"Test failed for test case {i}: expected {expected}, got {result}")
+                

@@ -40,6 +40,10 @@ class SearchInsertPosition(AbstractProblem):
         return left
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ([1, 3, 5, 6], 5, 2),   # Target exists in the list
@@ -50,16 +54,13 @@ class SearchInsertPosition(AbstractProblem):
             ([1], 1, 0)             # Single element list, target is the only element
         ]
 
-        for nums, target, expected in test_cases:
+        # Run each test case
+        for i, (nums, target, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             result = self.solution(nums, target)
-            assert result == expected, f"Test failed: expected {expected}, got {result}"
-            print(f"Test passed for nums = {nums}, target = {target}: {result}")
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with nums = {nums}, target = {target}: {result}")
+            else:
+                print(f"Test failed for test case {i} with nums = {nums}, target = {target}: expected {expected}, got {result}")
 
-    def __str__(self):
-        return (
-            f"Problem: Search Insert Position\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-    def __str__(self):
-        return super().__str__()

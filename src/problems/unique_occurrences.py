@@ -35,6 +35,10 @@ class UniqueOccurrences(AbstractProblem):
         return True
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ([1, 2, 2, 1, 1, 3], True),
@@ -45,10 +49,13 @@ class UniqueOccurrences(AbstractProblem):
             ([], True)  # Edge case: empty array
         ]
 
-        for nums, expected in test_cases:
+        # Run each test case
+        for i, (nums, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             result = self.solution(nums)
-            assert result == expected, f"Test failed: expected {expected}, got {result}"
-            print(f"Test passed for nums = {nums}: {result}")
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with nums = {nums}: {result}")
+            else:
+                print(f"Test failed for test case {i} with nums = {nums}: expected {expected}, got {result}")
 
-    def __str__(self):
-        return super().__str__()

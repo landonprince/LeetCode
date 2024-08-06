@@ -120,7 +120,12 @@ class ProblemMgr:
         self.console.print()
 
     def test_all_problems(self):
+        all_tests_passed = 0
+        all_total_tests = 0
         for problem in self.problem_list:
             print(f"\nTesting Problem: {problem.name}")
             problem.test()
+            all_tests_passed += problem.tests_passed
+            all_total_tests += problem.total_tests
+        print(f"\nTotal Tests Passed: {all_tests_passed}/{all_total_tests}")
         print()

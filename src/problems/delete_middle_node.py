@@ -42,7 +42,11 @@ class DeleteMiddleNode(AbstractProblem):
         return head
 
     def test(self):
-        # Helper function to convert linked list to Python list for Easy comparison
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
+        # Helper function to convert linked list to Python list for easy comparison
         def list_to_array(head: Optional[ListNode]) -> list[int]:
             array = []
             current = head
@@ -58,11 +62,15 @@ class DeleteMiddleNode(AbstractProblem):
             (ListNode(1), []),
         ]
 
-        for head, expected in test_cases:
+        # Run each test case
+        for i, (head, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             result = self.solution(head)
             result_array = list_to_array(result)
-            assert result_array == expected, f"Test failed: expected {expected}, got {result_array}"
-            print(f"Test passed: {result_array}")
+            if result_array == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i}: {result_array}")
+            else:
+                print(f"Test failed for test case {i}: expected {expected}, got {result_array}")
 
-    def __str__(self):
-        return super().__str__()
+

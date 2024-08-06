@@ -33,6 +33,10 @@ class InorderTraversal(AbstractProblem):
         self.traverse(root.right)  # Traverse right subtree
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Construct the binary tree
         root = TreeNode(1)
         root.left = TreeNode(2)
@@ -42,16 +46,18 @@ class InorderTraversal(AbstractProblem):
         root.right.left = TreeNode(6)
         root.right.right = TreeNode(7)
 
-        expected_result = [4, 2, 5, 1, 6, 3, 7]
-        result = self.solution(root)
-        assert result == expected_result, f"Test failed: expected {expected_result}, got {result}"
-        print(f"Test passed: {result}")
+        # Test cases
+        test_cases = [
+            (root, [4, 2, 5, 1, 6, 3, 7]),  # In-order traversal result
+        ]
 
-    def __str__(self):
-        return (
-            f"Problem: Binary Tree Inorder Traversal\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
+        # Run each test case
+        for i, (tree, expected_result) in enumerate(test_cases, start=1):
+            self.total_tests += 1
+            result = self.solution(tree)
+            if result == expected_result:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i}: {result}")
+            else:
+                print(f"Test failed for test case {i}: expected {expected_result}, got {result}")
 
-    def __str__(self):
-        return super().__str__()

@@ -42,6 +42,10 @@ class MergeSortedArray(AbstractProblem):
             p -= 1
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Test cases
         test_cases = [
             ([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3, [1, 2, 2, 3, 5, 6]),
@@ -50,11 +54,14 @@ class MergeSortedArray(AbstractProblem):
             ([0], 0, [1], 1, [1])
         ]
 
-        for nums1, m, nums2, n, expected in test_cases:
+        # Run each test case
+        for i, (nums1, m, nums2, n, expected) in enumerate(test_cases, start=1):
+            self.total_tests += 1
             nums1_copy = nums1[:]
             self.solution(nums1_copy, m, nums2, n)
-            assert nums1_copy == expected, f"Test failed: expected {expected}, got {nums1_copy}"
-            print(f"Test passed for nums1 = {nums1}, nums2 = {nums2}: {nums1_copy}")
+            if nums1_copy == expected:
+                self.tests_passed += 1
+                print(f"Test passed for test case {i} with nums1 = {nums1}, nums2 = {nums2}: {nums1_copy}")
+            else:
+                print(f"Test failed for test case {i} with nums1 = {nums1}, nums2 = {nums2}: expected {expected}, got {nums1_copy}")
 
-    def __str__(self):
-        return super().__str__()

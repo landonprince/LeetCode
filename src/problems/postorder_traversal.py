@@ -34,6 +34,10 @@ class PostorderTraversal(AbstractProblem):
         result.append(root.val)  # Visit node
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Construct the binary tree
         root = TreeNode(1)
         root.left = TreeNode(2)
@@ -43,17 +47,13 @@ class PostorderTraversal(AbstractProblem):
         root.right.left = TreeNode(6)
         root.right.right = TreeNode(7)
 
-        # Expected postorder traversal: [4, 5, 2, 6, 7, 3, 1]
-        expected_result = [4, 5, 2, 6, 7, 3, 1]
+        # Test case 1
+        self.total_tests += 1
+        expected_result = [4, 5, 2, 6, 7, 3, 1]  # Expected postorder traversal
         result = self.solution(root)
-        assert result == expected_result, f"Test failed: expected {expected_result}, got {result}"
-        print(f"Test passed: {result}")
+        if result == expected_result:
+            self.tests_passed += 1
+            print(f"Test passed for test case 1: {result}")
+        else:
+            print(f"Test failed for test case 1: expected {expected_result}, got {result}")
 
-    def __str__(self):
-        return (
-            f"Problem: Binary Tree Postorder Traversal\nDifficulty: {self.difficulty}\nLink: {self.link}\n"
-            f"Instructions: {self.instructions}\nTags: {', '.join(self.tags)}"
-        )
-
-    def __str__(self):
-        return super().__str__()
