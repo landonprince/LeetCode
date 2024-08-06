@@ -48,7 +48,7 @@ def main():
         elif command == "tags":
             problem_collection.display_tags()
         elif command == "quit":
-            print("Exiting the program. Goodbye!")
+            print("Exiting the program. Goodbye!\n")
             break
         else:
             console.print("[red]Invalid command.[/red] Type 'help' to see available commands.")
