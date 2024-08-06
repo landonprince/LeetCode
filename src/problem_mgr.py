@@ -28,7 +28,7 @@ def import_submodules(package_name: str):
 # Import all submodules within the 'problems' package
 import_submodules('problems')
 
-class ProblemCollection:
+class ProblemMgr:
     def __init__(self, console: Console):
         self.problem_list = self.collect_problems()
         self.console = console
@@ -121,6 +121,6 @@ class ProblemCollection:
 
     def test_all_problems(self):
         for problem in self.problem_list:
-            print(f"\nTesting Problem: {problem.link}")
+            print(f"\nTesting Problem: {problem.name}")
             problem.test()
         print()

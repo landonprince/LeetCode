@@ -44,10 +44,17 @@ class TwoSum(AbstractProblem):
             ([1, 2, 3, 4, 5], 9, [3, 4])
         ]
 
-        for nums, target, expected in test_cases:
-            result = self.solution(nums, target)
-            assert result == expected, f"Test failed: expected {expected}, got {result}"
-            print(f"Test passed for nums = {nums}, target = {target}: {result}")
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
 
-    def __str__(self):
-        return super().__str__()
+        # Run each test case
+        for nums, target, expected in test_cases:
+            self.total_tests += 1
+            result = self.solution(nums, target)
+            if result == expected:
+                self.tests_passed += 1
+                print(f"Test passed for nums = {nums}, target = {target}: {result}")
+            else:
+                print(f"Test failed for nums = {nums}, target = {target}: expected {expected}, got {result}")
+

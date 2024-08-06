@@ -2,7 +2,7 @@ import sys
 import os
 from rich.console import Console
 from rich.table import Table
-from problem_collection import ProblemCollection
+from problem_mgr import ProblemMgr
 
 # Add the current directory to the system path to allow importing modules from the 'problems' package
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
@@ -30,7 +30,7 @@ def print_help():
     console.print()
 
 def main():
-    problem_collection = ProblemCollection(console)
+    problem_mgr = ProblemMgr(console)
     console.print("\n[green]Welcome to the LeetCode Problem Manager![/green]")
     print_help()
 
@@ -40,13 +40,13 @@ def main():
         command = input().strip().lower()
 
         if command == "problems":
-            problem_collection.display_problems()
+            problem_mgr.display_problems()
         elif command == "tests":
-            problem_collection.test_all_problems()
+            problem_mgr.test_all_problems()
         elif command == "help":
             print_help()
         elif command == "tags":
-            problem_collection.display_tags()
+            problem_mgr.display_tags()
         elif command == "quit":
             print("Exiting the program. Goodbye!\n")
             break
