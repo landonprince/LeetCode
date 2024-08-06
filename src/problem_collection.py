@@ -39,6 +39,7 @@ class ProblemCollection:
 
         # Create instances of each subclass and store them in problem_list
         return [cls() for cls in problem_classes]
+    
     def display_problems(self):
         # Create a rich table with horizontal lines
         table = Table(title="Problem List", show_lines=True)
