@@ -72,9 +72,6 @@ class MergeTwoSortedLists(AbstractProblem):
         result = list_to_array(self.solution(list1, list2))
         if result == expected:
             self.tests_passed += 1
-            print(f"Test passed for test case 1: {result}")
-        else:
-            print(f"Test failed for test case 1: expected {expected}, got {result}")
 
         # Test case 2: One list is empty
         self.total_tests += 1
@@ -85,9 +82,6 @@ class MergeTwoSortedLists(AbstractProblem):
         result = list_to_array(self.solution(list1, list2))
         if result == expected:
             self.tests_passed += 1
-            print(f"Test passed for test case 2: {result}")
-        else:
-            print(f"Test failed for test case 2: expected {expected}, got {result}")
 
         # Test case 3: Both lists are empty
         self.total_tests += 1
@@ -98,6 +92,4 @@ class MergeTwoSortedLists(AbstractProblem):
         result = list_to_array(self.solution(list1, list2))
         if result == expected:
             self.tests_passed += 1
-            print(f"Test passed for test case 3: {result}")
-        else:
-            print(f"Test failed for test case 3: expected {expected}, got {result}")
+

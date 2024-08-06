@@ -42,8 +42,6 @@ class CountingBits(AbstractProblem):
             result = self.solution(n)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for n = {n}: {result}")
-            else:
-                print(f"Test failed for n = {n}: expected {expected}, got {result}")
+
 
 

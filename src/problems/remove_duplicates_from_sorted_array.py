@@ -55,7 +55,5 @@ class RemoveDuplicatesFromSortedArray(AbstractProblem):
             length = self.solution(nums_copy)
             if nums_copy[:length] == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with nums = {nums}: {nums_copy[:length]}")
-            else:
-                print(f"Test failed for test case {i} with nums = {nums}: expected {expected}, got {nums_copy[:length]}")
+
 

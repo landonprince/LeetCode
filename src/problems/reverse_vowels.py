@@ -53,7 +53,5 @@ class ReverseVowels(AbstractProblem):
             result = self.solution(string)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with string = '{string}': {result}")
-            else:
-                print(f"Test failed for test case {i} with string = '{string}': expected {expected}, got {result}")
+
 

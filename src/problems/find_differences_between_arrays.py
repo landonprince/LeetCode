@@ -45,7 +45,5 @@ class FindDifferenceBetweenArrays(AbstractProblem):
             result = self.solution(nums1, nums2)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i}: {result}")
-            else:
-                print(f"Test failed for test case {i}: expected {expected}, got {result}")
+
 

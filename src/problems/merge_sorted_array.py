@@ -61,7 +61,5 @@ class MergeSortedArray(AbstractProblem):
             self.solution(nums1_copy, m, nums2, n)
             if nums1_copy == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with nums1 = {nums1}, nums2 = {nums2}: {nums1_copy}")
-            else:
-                print(f"Test failed for test case {i} with nums1 = {nums1}, nums2 = {nums2}: expected {expected}, got {nums1_copy}")
+
 

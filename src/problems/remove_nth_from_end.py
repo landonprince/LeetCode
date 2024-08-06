@@ -72,9 +72,6 @@ class RemoveNthFromEnd(AbstractProblem):
         result = list_to_array(self.solution(head, n))
         if result == expected:
             self.tests_passed += 1
-            print(f"Test passed for test case 1: {result}")
-        else:
-            print(f"Test failed for test case 1: expected {expected}, got {result}")
 
         # Test case 2: Remove the head node
         self.total_tests += 1
@@ -86,9 +83,6 @@ class RemoveNthFromEnd(AbstractProblem):
         result = list_to_array(self.solution(head, n))
         if result == expected:
             self.tests_passed += 1
-            print(f"Test passed for test case 2: {result}")
-        else:
-            print(f"Test failed for test case 2: expected {expected}, got {result}")
 
         # Test case 3: Single element list
         self.total_tests += 1
@@ -99,7 +93,5 @@ class RemoveNthFromEnd(AbstractProblem):
         result = list_to_array(self.solution(head, n))
         if result == expected:
             self.tests_passed += 1
-            print(f"Test passed for test case 3: {result}")
-        else:
-            print(f"Test failed for test case 3: expected {expected}, got {result}")
+
 

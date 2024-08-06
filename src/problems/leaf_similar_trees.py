@@ -61,9 +61,6 @@ class LeafSimilarTrees(AbstractProblem):
 
         if self.solution(root1, root2) == True:
             self.tests_passed += 1
-            print("Test case 1 passed")
-        else:
-            print("Test case 1 failed")
 
         # Test case 2
         self.total_tests += 1
@@ -89,9 +86,6 @@ class LeafSimilarTrees(AbstractProblem):
 
         if self.solution(root1, root2) == True:
             self.tests_passed += 1
-            print("Test case 2 passed")
-        else:
-            print("Test case 2 failed")
 
         # Test case 3
         self.total_tests += 1
@@ -107,9 +101,7 @@ class LeafSimilarTrees(AbstractProblem):
 
         if self.solution(root1, root2) == False:
             self.tests_passed += 1
-            print("Test case 3 passed")
-        else:
-            print("Test case 3 failed")
+
 
 
 

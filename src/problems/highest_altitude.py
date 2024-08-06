@@ -48,9 +48,7 @@ class HighestAltitude(AbstractProblem):
             result = self.solution(gain)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with gain = {gain}: {result}")
-            else:
-                print(f"Test failed for test case {i} with gain = {gain}: expected {expected}, got {result}")
+
 
                 
         

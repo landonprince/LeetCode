@@ -69,8 +69,6 @@ class DeleteMiddleNode(AbstractProblem):
             result_array = list_to_array(result)
             if result_array == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i}: {result_array}")
-            else:
-                print(f"Test failed for test case {i}: expected {expected}, got {result_array}")
+
 
 

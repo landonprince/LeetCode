@@ -41,8 +41,6 @@ class StrStr(AbstractProblem):
             result = self.solution(haystack, needle)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with haystack = '{haystack}', needle = '{needle}': {result}")
-            else:
-                print(f"Test failed for test case {i} with haystack = '{haystack}', needle = '{needle}': expected {expected}, got {result}")
+
 
 

@@ -51,7 +51,5 @@ class RemoveElement(AbstractProblem):
             length = self.solution(nums_copy, val)
             if nums_copy[:length] == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with nums = {nums}, val = {val}: {nums_copy[:length]}")
-            else:
-                print(f"Test failed for test case {i} with nums = {nums}, val = {val}: expected {expected}, got {nums_copy[:length]}")
+
 

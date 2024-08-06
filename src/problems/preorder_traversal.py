@@ -53,7 +53,5 @@ class PreorderTraversal(AbstractProblem):
         result = self.solution(root)
         if result == expected_result:
             self.tests_passed += 1
-            print(f"Test passed for test case 1: {result}")
-        else:
-            print(f"Test failed for test case 1: expected {expected_result}, got {result}")
+
 

@@ -67,7 +67,5 @@ class GuessNumberHigherOrLower(AbstractProblem):
             result = self.solution(n)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with n = {n}, picked = {expected}: {result}")
-            else:
-                print(f"Test failed for test case {i} with n = {n}, picked = {expected}: expected {expected}, got {result}")
+
 

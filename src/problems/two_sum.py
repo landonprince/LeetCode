@@ -54,7 +54,5 @@ class TwoSum(AbstractProblem):
             result = self.solution(nums, target)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for nums = {nums}, target = {target}: {result}")
-            else:
-                print(f"Test failed for nums = {nums}, target = {target}: expected {expected}, got {result}")
+
 

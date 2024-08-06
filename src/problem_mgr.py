@@ -152,6 +152,7 @@ class ProblemMgr:
             all_total_tests += problem.total_tests
 
         # Print the table with all test results
+        self.console.print()
         self.console.print(table)
         self.console.print()
 

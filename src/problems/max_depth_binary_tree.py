@@ -50,9 +50,6 @@ class MaxDepthBinaryTree(AbstractProblem):
         result = self.solution(root1)
         if result == expected_result:
             self.tests_passed += 1
-            print(f"Test passed for test case 1: {result}")
-        else:
-            print(f"Test failed for test case 1: expected {expected_result}, got {result}")
 
         # Test case 2: Single node
         self.total_tests += 1
@@ -61,9 +58,6 @@ class MaxDepthBinaryTree(AbstractProblem):
         result = self.solution(root2)
         if result == expected_result:
             self.tests_passed += 1
-            print(f"Test passed for test case 2: {result}")
-        else:
-            print(f"Test failed for test case 2: expected {expected_result}, got {result}")
 
         # Test case 3: Empty tree
         self.total_tests += 1
@@ -72,9 +66,6 @@ class MaxDepthBinaryTree(AbstractProblem):
         result = self.solution(root3)
         if result == expected_result:
             self.tests_passed += 1
-            print(f"Test passed for test case 3: {result}")
-        else:
-            print(f"Test failed for test case 3: expected {expected_result}, got {result}")
 
         # Test case 4: More complex tree
         self.total_tests += 1
@@ -87,9 +78,7 @@ class MaxDepthBinaryTree(AbstractProblem):
         result = self.solution(root4)
         if result == expected_result:
             self.tests_passed += 1
-            print(f"Test passed for test case 4: {result}")
-        else:
-            print(f"Test failed for test case 4: expected {expected_result}, got {result}")
+
 
 
     

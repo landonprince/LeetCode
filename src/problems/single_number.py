@@ -42,7 +42,5 @@ class SingleNumber(AbstractProblem):
             result = self.solution(nums)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with nums = {nums}: {result}")
-            else:
-                print(f"Test failed for test case {i} with nums = {nums}: expected {expected}, got {result}")
+
 

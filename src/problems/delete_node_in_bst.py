@@ -87,7 +87,5 @@ class DeleteNodeInBST(AbstractProblem):
             result = inorder_traversal(modified_root)
             if result == expected_result:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i}: {result}")
-            else:
-                print(f"Test failed for test case {i}: expected {expected_result}, got {result}")
+
 

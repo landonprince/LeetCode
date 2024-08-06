@@ -60,7 +60,5 @@ class SearchInsertPosition(AbstractProblem):
             result = self.solution(nums, target)
             if result == expected:
                 self.tests_passed += 1
-                print(f"Test passed for test case {i} with nums = {nums}, target = {target}: {result}")
-            else:
-                print(f"Test failed for test case {i} with nums = {nums}, target = {target}: expected {expected}, got {result}")
+
 

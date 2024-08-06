@@ -61,9 +61,6 @@ class SearchInBST(AbstractProblem):
         result_values = print_in_order(result)
         if result_values == expected:
             self.tests_passed += 1
-            print(f"Test passed for value {val1}: {result_values}")
-        else:
-            print(f"Test failed for value {val1}: expected {expected}, got {result_values}")
 
         # Test case 2: Search for a value that does not exist
         self.total_tests += 1
@@ -73,9 +70,6 @@ class SearchInBST(AbstractProblem):
         result_values = result.val if result else None
         if result_values == expected:
             self.tests_passed += 1
-            print(f"Test passed for value {val2}: {result_values}")
-        else:
-            print(f"Test failed for value {val2}: expected {expected}, got {result_values}")
 
         # Test case 3: Search for the root value
         self.total_tests += 1
@@ -85,7 +79,5 @@ class SearchInBST(AbstractProblem):
         result_values = print_in_order(result)
         if result_values == expected:
             self.tests_passed += 1
-            print(f"Test passed for value {val3}: {result_values}")
-        else:
-            print(f"Test failed for value {val3}: expected {expected}, got {result_values}")
+
 
