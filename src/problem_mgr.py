@@ -39,7 +39,7 @@ class ProblemMgr:
 
         # Create instances of each subclass and store them in problem_list
         return [cls() for cls in problem_classes]
-    
+        
     def display_problems(self):
         # Create a rich table with horizontal lines
         table = Table(title="Problem List", show_lines=True)
@@ -55,12 +55,23 @@ class ProblemMgr:
         # Sort the problem list by difficulty using the defined order
         sorted_problems = sorted(self.problem_list, key=lambda problem: difficulty_order[problem.difficulty.lower()])
 
+        # Initialize counters for each difficulty level
+        easy_count = 0
+        medium_count = 0
+        hard_count = 0
+
         # Add rows to the table
         for index, problem in enumerate(sorted_problems, start=1):
-            # Change the color of the difficulty based on its value
-            difficulty_color = "green" if problem.difficulty.lower() == "easy" else \
-                            "yellow" if problem.difficulty.lower() == "medium" else \
-                            "red"
+            # Increment counters based on the problem's difficulty
+            if problem.difficulty.lower() == "easy":
+                easy_count += 1
+                difficulty_color = "green"
+            elif problem.difficulty.lower() == "medium":
+                medium_count += 1
+                difficulty_color = "yellow"
+            else:
+                hard_count += 1
+                difficulty_color = "red"
 
             # Add a row to the table with colored difficulty
             table.add_row(
@@ -68,11 +79,15 @@ class ProblemMgr:
                 f"[{difficulty_color}]{problem.difficulty}[/{difficulty_color}]",
                 f"{problem.name}"
             )
+
         # Print the table
         self.console.print()
         self.console.print(table)
         self.console.print()
-    
+
+        # Print the summary of problem counts by difficulty level
+        self.console.print(f"Easy: [green]{easy_count}[/green] | Medium: [yellow]{medium_count}[/yellow] | Hard: [red]{hard_count}[/red]\n")
+
     def display_tags(self):
         # Dictionary to store tags and associated problem names
         tag_to_problems: Dict[str, List[str]] = {}
@@ -92,10 +107,7 @@ class ProblemMgr:
         sorted_tags = sorted(tag_to_problems.items(), key=lambda item: len(item[1]))
 
         # Create a rich table
-        table = Table(
-            title="Tag List",
-            show_lines=True
-        )
+        table = Table(title="Tag List",show_lines=True)
 
         # Add columns to the table with total counts
         table.add_column(f"Tag ({total_tags})", justify="left", style="cyan", no_wrap=True)
@@ -119,13 +131,29 @@ class ProblemMgr:
         self.console.print(table)
         self.console.print()
 
-    def test_all_problems(self):
+    def test_problems(self):
+        # Create a rich table with two columns
+        table = Table(title="Testing All Problems", show_lines=True)
+        table.add_column("Problem Name", justify="left")
+        table.add_column("Tests Passed", justify="center", style="cyan")
+
         all_tests_passed = 0
         all_total_tests = 0
+
         for problem in self.problem_list:
-            print(f"\nTesting Problem: {problem.name}")
+            # Run the test method to capture test results
             problem.test()
+
+            # Add each problem's name and test results to the table
+            table.add_row(problem.name, f"{problem.tests_passed}/{problem.total_tests}")
+
+            # Accumulate the total tests passed and total tests for all problems
             all_tests_passed += problem.tests_passed
             all_total_tests += problem.total_tests
-        print(f"\nTotal Tests Passed: {all_tests_passed}/{all_total_tests}")
-        print()
+
+        # Print the table with all test results
+        self.console.print(table)
+        self.console.print()
+
+        # Print the overall summary below the table with colored results
+        self.console.print(f"Total Tests Passed: [green]{all_tests_passed}/{all_total_tests}[/green]\n")

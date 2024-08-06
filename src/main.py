@@ -31,18 +31,18 @@ def print_help():
 
 def main():
     problem_mgr = ProblemMgr(console)
-    console.print("\n[green]Welcome to the LeetCode Problem Manager![/green]")
+    console.print("\n[magenta]Welcome to the LeetCode Problem Manager![/magenta]")
     print_help()
 
     while True:
         # Get user input
-        console.print("Enter a command:", style="green", end=" ")
+        console.print("Enter a command:", style="magenta", end=" ")
         command = input().strip().lower()
 
         if command == "problems":
             problem_mgr.display_problems()
         elif command == "tests":
-            problem_mgr.test_all_problems()
+            problem_mgr.test_problems()
         elif command == "help":
             print_help()
         elif command == "tags":

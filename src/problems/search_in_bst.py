@@ -34,6 +34,10 @@ class SearchInBST(AbstractProblem):
             return root
 
     def test(self):
+        # Reset test counters
+        self.tests_passed = 0
+        self.total_tests = 0
+
         # Helper function to print the tree in-order for debugging
         def print_in_order(node: Optional[TreeNode]) -> list:
             return (
@@ -50,26 +54,38 @@ class SearchInBST(AbstractProblem):
         root.right.left = TreeNode(6)
 
         # Test case 1: Search for a value that exists
+        self.total_tests += 1
         val1 = 2
         expected = [1, 2, 3]
         result = self.solution(root, val1)
         result_values = print_in_order(result)
-        assert result_values == expected, f"Test failed: expected {expected}, got {result_values}"
-        print(f"Test passed for value {val1}: {result_values}")
+        if result_values == expected:
+            self.tests_passed += 1
+            print(f"Test passed for value {val1}: {result_values}")
+        else:
+            print(f"Test failed for value {val1}: expected {expected}, got {result_values}")
 
         # Test case 2: Search for a value that does not exist
+        self.total_tests += 1
         val2 = 5
         expected = None
         result = self.solution(root, val2)
         result_values = result.val if result else None
-        assert result_values == expected, f"Test failed: expected {expected}, got {result_values}"
-        print(f"Test passed for value {val2}: {result_values}")
+        if result_values == expected:
+            self.tests_passed += 1
+            print(f"Test passed for value {val2}: {result_values}")
+        else:
+            print(f"Test failed for value {val2}: expected {expected}, got {result_values}")
 
         # Test case 3: Search for the root value
+        self.total_tests += 1
         val3 = 4
         expected = [1, 2, 3, 4, 6, 7]
         result = self.solution(root, val3)
         result_values = print_in_order(result)
-        assert result_values == expected, f"Test failed: expected {expected}, got {result_values}"
-        print(f"Test passed for value {val3}: {result_values}")
+        if result_values == expected:
+            self.tests_passed += 1
+            print(f"Test passed for value {val3}: {result_values}")
+        else:
+            print(f"Test failed for value {val3}: expected {expected}, got {result_values}")
 
