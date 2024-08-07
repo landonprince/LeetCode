@@ -81,7 +81,7 @@ class DeleteNodeInBST(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (root, delete_value, expected_result) in enumerate(test_cases, start=1):
+        for root, delete_value, expected_result in test_cases:
             self.total_tests += 1
             modified_root = self.solution(root, delete_value)
             result = inorder_traversal(modified_root)

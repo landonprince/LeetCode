@@ -48,7 +48,7 @@ class ReverseVowels(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (string, expected) in enumerate(test_cases, start=1):
+        for string, expected in test_cases:
             self.total_tests += 1
             result = self.solution(string)
             if result == expected:

@@ -43,7 +43,7 @@ class HighestAltitude(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (gain, expected) in enumerate(test_cases, start=1):
+        for gain, expected in test_cases:
             self.total_tests += 1
             result = self.solution(gain)
             if result == expected:

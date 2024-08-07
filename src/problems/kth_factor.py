@@ -43,7 +43,7 @@ class KthFactor(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (n, k, expected) in enumerate(test_cases, start=1):
+        for n, k, expected in test_cases:
             self.total_tests += 1
             result = self.solution(n, k)
             if result == expected:

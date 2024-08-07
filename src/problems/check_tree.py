@@ -40,7 +40,7 @@ class CheckTree(AbstractProblem):
             (TreeNode(6, TreeNode(2), TreeNode(4)), True),   # Test case 4
         ]
 
-        for i, (root, expected) in enumerate(test_cases, start=1):
+        for root, expected in test_cases:
             self.total_tests += 1
             result = self.solution(root)
             if result == expected:

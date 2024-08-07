@@ -44,7 +44,7 @@ class MoveZeroes(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (nums, expected) in enumerate(test_cases, start=1):
+        for nums, expected in test_cases:
             self.total_tests += 1
             nums_copy = nums[:]
             self.solution(nums_copy)

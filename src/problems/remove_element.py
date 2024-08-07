@@ -45,7 +45,7 @@ class RemoveElement(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (nums, val, expected) in enumerate(test_cases, start=1):
+        for nums, val, expected in test_cases:
             self.total_tests += 1
             nums_copy = nums[:]
             length = self.solution(nums_copy, val)

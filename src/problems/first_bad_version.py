@@ -61,7 +61,7 @@ class FirstBadVersion(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (bad, n, expected) in enumerate(test_cases, start=1):
+        for bad, n, expected in test_cases:
             self.total_tests += 1
             result = self.solution(n)
             if result == expected:

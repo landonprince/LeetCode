@@ -61,7 +61,7 @@ class GuessNumberHigherOrLower(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (n, expected) in enumerate(test_cases, start=1):
+        for n, expected in test_cases:
             self.total_tests += 1
             self.picked_number = expected
             result = self.solution(n)

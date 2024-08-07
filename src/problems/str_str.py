@@ -36,7 +36,7 @@ class StrStr(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (haystack, needle, expected) in enumerate(test_cases, start=1):
+        for haystack, needle, expected in test_cases:
             self.total_tests += 1
             result = self.solution(haystack, needle)
             if result == expected:

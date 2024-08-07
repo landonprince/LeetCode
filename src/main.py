@@ -48,10 +48,10 @@ def main():
         elif command == "tags":
             problem_mgr.display_tags()
         elif command == "quit":
-            print("Exiting the program. Goodbye!\n")
+            print()
             break
         else:
-            console.print("[red]Invalid command.[/red] Type 'help' to see available commands.")
+            console.print("\n[red]Invalid command.[/red] Type 'help' to see available commands.\n")
 
 if __name__ == "__main__":
     main()

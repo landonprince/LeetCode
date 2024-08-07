@@ -52,7 +52,7 @@ class InorderTraversal(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (tree, expected_result) in enumerate(test_cases, start=1):
+        for tree, expected_result in test_cases:
             self.total_tests += 1
             result = self.solution(tree)
             if result == expected_result:

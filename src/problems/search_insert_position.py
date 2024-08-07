@@ -55,7 +55,7 @@ class SearchInsertPosition(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (nums, target, expected) in enumerate(test_cases, start=1):
+        for nums, target, expected in test_cases:
             self.total_tests += 1
             result = self.solution(nums, target)
             if result == expected:

@@ -63,7 +63,7 @@ class DeleteMiddleNode(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (head, expected) in enumerate(test_cases, start=1):
+        for head, expected in test_cases:
             self.total_tests += 1
             result = self.solution(head)
             result_array = list_to_array(result)

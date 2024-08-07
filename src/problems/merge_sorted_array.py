@@ -55,7 +55,7 @@ class MergeSortedArray(AbstractProblem):
         ]
 
         # Run each test case
-        for i, (nums1, m, nums2, n, expected) in enumerate(test_cases, start=1):
+        for nums1, m, nums2, n, expected in test_cases:
             self.total_tests += 1
             nums1_copy = nums1[:]
             self.solution(nums1_copy, m, nums2, n)
