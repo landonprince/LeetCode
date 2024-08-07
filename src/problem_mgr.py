@@ -45,7 +45,7 @@ class ProblemMgr:
         table = Table(title="Problem List", show_lines=True)
 
         # Define table columns
-        table.add_column("#", justify="right", style="cyan", no_wrap=True)
+        table.add_column("#", justify="center", style="cyan", no_wrap=True)
         table.add_column("Level")
         table.add_column("Problem Name")
 

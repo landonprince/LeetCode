@@ -18,7 +18,7 @@ class DeleteNodeInBST(AbstractProblem):
                 "Given a root node reference of a BST and a key, delete the node with the given key in the BST. "
                 "Return the root node reference of the updated BST."
             ),
-            tags = ["Binary Search Tree", "Depth-First Search", "Recursion"]
+            tags = ["Binary Tree", "Depth-First Search", "Recursion"]
         )
     def solution(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         if root is None:
